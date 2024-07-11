@@ -164,6 +164,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActivityAuditController.cs" />
+    <Compile Include="Controllers\ActivityDetailController.cs" />
     <Compile Include="Controllers\APPUSERsController.cs" />
     <Compile Include="Controllers\EVENTsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,9 +194,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\COLLECTION_ACTIVITY.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\COMMENTREVIEW.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\COMMENTTHUMBSUP.cs">
@@ -249,16 +247,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\PHARMACY_ADMIN.cs">
+    <Compile Include="Models\ORDERED.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PUBLICATION_DISCUSSION.cs">
+    <Compile Include="Models\PHARMACY_ADMIN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PURCHASE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\REPLYCOMMENT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SUPERVISOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\THEELDERLY.cs">
@@ -274,6 +275,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
     <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-icons.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-reboot.rtl.css" />
@@ -286,9 +288,26 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\tooplate-mini-finance.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\credit-card.png" />
+    <Content Include="images\flag\australia.png" />
+    <Content Include="images\flag\european-union.png" />
+    <Content Include="images\flag\singapore.png" />
+    <Content Include="images\flag\united-kingdom.png" />
+    <Content Include="images\flag\united-states.png" />
+    <Content Include="images\medium-shot-happy-man-smiling.jpg" />
+    <Content Include="images\profile\senior-man-white-sweater-eyeglasses.jpg" />
+    <Content Include="images\profile\young-beautiful-woman-pink-warm-sweater.jpg" />
+    <Content Include="images\profile\young-woman-with-round-glasses-yellow-sweater.jpg" />
+    <Content Include="images\social\search.png" />
+    <Content Include="images\social\snapchat.png" />
+    <Content Include="images\social\spotify.png" />
+    <Content Include="images\social\telegram.png" />
+    <Content Include="images\social\tiktok.png" />
+    <Content Include="images\social\youtube.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -299,6 +318,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\activity-detail.js" />
+    <Content Include="Scripts\activity-list.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -360,9 +381,12 @@
     <Content Include="Views\EVENTs\Details.cshtml" />
     <Content Include="Views\EVENTs\Edit.cshtml" />
     <Content Include="Views\EVENTs\Index.cshtml" />
+    <Content Include="Views\ActivityDetail\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -18,18 +18,18 @@ namespace WebApplication1.Models
         public THEELDERLY()
         {
             this.APPORDER = new HashSet<APPORDER>();
-            this.CARE = new HashSet<CARE>();
             this.CHECK_RECORD = new HashSet<CHECK_RECORD>();
             this.COLLECTION_ACTIVITY = new HashSet<COLLECTION_ACTIVITY>();
             this.COMMENTTHUMBSUP = new HashSet<COMMENTTHUMBSUP>();
             this.COMMENTTHUMBSUP1 = new HashSet<COMMENTTHUMBSUP>();
-            this.DISCUSSION = new HashSet<DISCUSSION>();
             this.DRUGDIRECTORY = new HashSet<DRUGDIRECTORY>();
             this.JOIN_ACTIVITY = new HashSet<JOIN_ACTIVITY>();
             this.MEDICAL_HISTORY = new HashSet<MEDICAL_HISTORY>();
-            this.PUBLICATION_DISCUSSION = new HashSet<PUBLICATION_DISCUSSION>();
             this.THUMBSUP_ACTIVITY = new HashSet<THUMBSUP_ACTIVITY>();
             this.ADVICE = new HashSet<ADVICE>();
+            this.CARE = new HashSet<CARE>();
+            this.ORDERED = new HashSet<ORDERED>();
+            this.SUPERVISOR = new HashSet<SUPERVISOR>();
         }
     
         public int ELDERLY_ID { get; set; }
@@ -46,8 +46,6 @@ namespace WebApplication1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<APPORDER> APPORDER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CARE> CARE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHECK_RECORD> CHECK_RECORD { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COLLECTION_ACTIVITY> COLLECTION_ACTIVITY { get; set; }
@@ -56,19 +54,21 @@ namespace WebApplication1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMMENTTHUMBSUP> COMMENTTHUMBSUP1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DISCUSSION> DISCUSSION { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DRUGDIRECTORY> DRUGDIRECTORY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JOIN_ACTIVITY> JOIN_ACTIVITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MEDICAL_HISTORY> MEDICAL_HISTORY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PUBLICATION_DISCUSSION> PUBLICATION_DISCUSSION { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ADVICE> ADVICE { get; set; }
         public virtual ELDERLY_EMERGENCY_CONTECT ELDERLY_EMERGENCY_CONTECT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CARE> CARE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDERED> ORDERED { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SUPERVISOR> SUPERVISOR { get; set; }
     }
 }

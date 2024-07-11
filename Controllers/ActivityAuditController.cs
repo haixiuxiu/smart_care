@@ -12,18 +12,35 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public JsonResult GetActivities()
+        {
             try
             {
-                var activities = db.EVENT.AsQueryable().ToList();
-                return View(activities);
+                var activities = db.EVENT
+                                   .Where(e => e.EVENT_STATE == "未审核")
+                                   .AsQueryable()
+                                   .ToList();
+
+                var result = activities.Select(a => new
+                {
+                    a.EVENT_ID,
+                    a.EVENT_NAME,
+                    EVENT_DATE = a.EVENT_DATE.ToString("yyyy-MM-dd HH:mm"),
+                    a.INITIATOR_ID
+                }).ToList();
+
+                return Json(new { activities = result }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                // 记录错误日志
-                ViewBag.ErrorMessage = "无法访问数据库中的 EVENT 表!" + ex.Message;
-                return View(new List<EVENT>());
+                return Json(new { errorMessage = "无法访问数据库中的 EVENT 表!" + ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

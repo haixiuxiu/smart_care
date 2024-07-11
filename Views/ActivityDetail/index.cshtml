@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/tooplate-mini-finance.css" rel="stylesheet">
+    <title>活动详细信息</title>
+</head>
+<body>
+    <div id="app" class="container-fluid">
+        <div v-if="errorMessage" class="alert alert-danger">
+            [[ errorMessage ]]
+        </div>
+        <div v-else>
+            <div class="row">
+                <div class="col-lg-7 col-12">
+                    <div class="custom-block custom-block-profile">
+                        <div class="row">
+                            <div class="col-lg-12 col-12 mb-3">
+                                <h6>活动信息</h6>
+                            </div>
+                            <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                <div class="custom-block-profile-image-wrap">
+                                    <img src="~/images/event-placeholder.jpg" class="custom-block-profile-image img-fluid" alt="">
+                                    <a href="setting.html" class="bi-pencil-square custom-block-edit-icon"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-12">
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动ID:</strong>
+                                    <span>[[ activity.EVENT_ID ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动名称:</strong>
+                                    <span>[[ activity.EVENT_NAME ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动类型:</strong>
+                                    <span>[[ activity.EVENT_TYPE ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动内容:</strong>
+                                    <span>[[ activity.EVENT_CONTENT ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动地点:</strong>
+                                    <span>[[ activity.EVENT_SITE ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>活动日期:</strong>
+                                    <span>[[ formatDate(activity.EVENT_DATE) ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>开始时间:</strong>
+                                    <span>[[ formatTime(activity.EVENT_START_TIME) ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>结束时间:</strong>
+                                    <span>[[ formatTime(activity.EVENT_END_TIME) ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>点赞数:</strong>
+                                    <span>[[ activity.STAR_NUMBER ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>参与人数:</strong>
+                                    <span>[[ activity.PARTICIPANT_NUMBER ]]</span>
+                                </p>
+                                <p class="d-flex flex-wrap mb-2">
+                                    <strong>发起人ID:</strong>
+                                    <span>[[ activity.INITIATOR_ID ]]</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 评论区 -->
+                    <div class="custom-block bg-white mt-4">
+                        <h6 class="mb-3">评论区</h6>
+                        <div v-if="comments.length">
+                            <div v-for="comment in comments" class="mb-3">
+                                <p class="mb-1"><strong>评论用户:</strong> [[ (comment.USER_ID) ]]</p>
+                                <p class="mb-1"><strong>评论时间:</strong> [[ (comment.COMMENT_TIME) ]]</p>
+                                <p class="mb-1"><strong>评论内容:</strong> [[ comment.COMMENT_CONTENT ]]</p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <p>暂无评论。</p>
+                        </div>
+
+                        <!-- 添加评论表单 -->
+                        <form v-on:submit.prevent="submitComment">
+                            <div class="form-group">
+                                <label for="newComment">发表新评论</label>
+                                <textarea id="newComment" v-model="newComment" class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">提交评论</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="~/Scripts/activity-detail.js"></script>
+</body>
+</html>

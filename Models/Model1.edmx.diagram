@@ -4,19 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8c1442dcb7b14ccf8d99a6043339c985" Name="Diagram1">
+      <Diagram DiagramId="8c1442dcb7b14ccf8d99a6043339c985" Name="Diagram1" ZoomLevel="62">
         <EntityTypeShape EntityType="Model.ADMINISTER" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ADVICE" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.APPORDER" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.APPUSER" Width="1.5" PointX="1.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CARE" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CARETAKER" Width="1.5" PointX="3.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CHECK_RECORD" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.COLLECTION_ACTIVITY" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENTREVIEW" Width="1.5" PointX="6" PointY="27.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.COMMENTTHUMBSUP" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.COMMUNITY_DOCTOR" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DISCUSSION" Width="1.5" PointX="6" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DRUG" Width="1.5" PointX="6.75" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DRUG_LOG" Width="1.5" PointX="9" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DRUG_STORE" Width="1.5" PointX="9" PointY="12.875" IsExpanded="true" />
@@ -27,13 +24,11 @@
         <EntityTypeShape EntityType="Model.JOIN_ACTIVITY" Width="1.5" PointX="9" PointY="16.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.MEDICAL_HISTORY" Width="1.5" PointX="3" PointY="48.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.PHARMACY_ADMIN" Width="1.5" PointX="9" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PUBLICATION_DISCUSSION" Width="1.5" PointX="11.25" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.PURCHASE" Width="1.5" PointX="11.25" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.REPLYCOMMENT" Width="1.5" PointX="6" PointY="34.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.THEELDERLY" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.THUMBSUP_ACTIVITY" Width="1.5" PointX="9" PointY="23" IsExpanded="true" />
         <AssociationConnector Association="Model.COLLECTION_ACTIVITY_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMMENTREVIEW_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.EVENTCHECK_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.ADVICE_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.APPORDER_FK1" ManuallyRouted="false" />
@@ -41,34 +36,23 @@
         <AssociationConnector Association="Model.CARETAKER_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.DRUG_LOG_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.DRUG_LOG_FK3" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.CARE_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.CARE_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COLLECTION_ACTIVITY_FK4" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK4" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DISCUSSION_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.JOIN_ACTIVITY_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PUBLICATION_DISCUSSION_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.THUMBSUP_ACTIVITY_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.CHECK_RECORD_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.CHECK_RECORD_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COLLECTION_ACTIVITY_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COLLECTION_ACTIVITY_FK3" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COLLECTION_ACTIVITY_FK5" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMMENTREVIEW_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK2" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK3" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK5" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK6" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK7" ManuallyRouted="false" />
         <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK8" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DISCUSSION_FK3" ManuallyRouted="false" />
         <AssociationConnector Association="Model.JOIN_ACTIVITY_FK3" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PUBLICATION_DISCUSSION_FK4" ManuallyRouted="false" />
         <AssociationConnector Association="Model.THUMBSUP_ACTIVITY_FK3" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DISCUSSION_FK2" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DISCUSSION_FK4" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PUBLICATION_DISCUSSION_FK3" ManuallyRouted="false" />
         <AssociationConnector Association="Model.DRUG_LOG_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.DRUG_STORE_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.DRUGDIRECTORY_FK1" ManuallyRouted="false" />
@@ -77,18 +61,26 @@
         <AssociationConnector Association="Model.DRUGDIRECTORY_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.EVENTCHECK_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.JOIN_ACTIVITY_FK2" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PUBLICATION_DISCUSSION_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.REPLYCOMMENT_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.THUMBSUP_ACTIVITY_FK2" ManuallyRouted="false" />
         <AssociationConnector Association="Model.JOIN_ACTIVITY_FK4" ManuallyRouted="false" />
         <AssociationConnector Association="Model.MEDICAL_HISTORY_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.PURCHASE_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PUBLICATION_DISCUSSION_FK5" ManuallyRouted="false" />
         <AssociationConnector Association="Model.THUMBSUP_ACTIVITY_FK4" ManuallyRouted="false" />
         <AssociationConnector Association="Model.ADVICE_FK11" />
         <AssociationConnector Association="Model.ADVICE_FK2" />
         <AssociationConnector Association="Model.ELDERLY_EMERGENCY_CONTECT_FK1" />
-      </Diagram>
+        <EntityTypeShape EntityType="Model.CARE" Width="1.5" PointX="12" PointY="6.25" />
+        <EntityTypeShape EntityType="Model.ORDERED" Width="1.5" PointX="12" PointY="15.25" />
+        <EntityTypeShape EntityType="Model.SUPERVISOR" Width="1.5" PointX="0.75" PointY="28.375" />
+        <AssociationConnector Association="Model.CARE_FK1" />
+        <AssociationConnector Association="Model.CARE_FK2" />
+        <AssociationConnector Association="Model.ORDERED_FK1" />
+        <AssociationConnector Association="Model.ORDERED_FK2" />
+        <AssociationConnector Association="Model.SUPERVISOR_ELDERLY" />
+        <EntityTypeShape EntityType="Model.DISCUSSION" Width="1.5" PointX="11.375" PointY="1" />
+        <AssociationConnector Association="Model.COMMENTTHUMBSUP_FK3" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

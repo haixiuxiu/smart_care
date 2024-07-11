@@ -18,16 +18,9 @@ namespace WebApplication1.Models
         public int USER_ID { get; set; }
         public int ACTIVITY_ID { get; set; }
         public string COMMENT_CONTENT { get; set; }
-        public string AUDIT_STATUS { get; set; }
         public System.DateTime COMMENT_TIME { get; set; }
         public int LIKES_NUMBER { get; set; }
-        public bool COMMENT_STATUS { get; set; }
     
-        public virtual CARETAKER CARETAKER { get; set; }
         public virtual COMMENTTHUMBSUP COMMENTTHUMBSUP { get; set; }
-        public virtual COMMUNITY_DOCTOR COMMUNITY_DOCTOR { get; set; }
-        public virtual EVENT EVENT { get; set; }
-        public virtual THEELDERLY THEELDERLY { get; set; }
-        public virtual PUBLICATION_DISCUSSION PUBLICATION_DISCUSSION { get; set; }
     }
 }

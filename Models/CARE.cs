@@ -14,14 +14,17 @@ namespace WebApplication1.Models
     
     public partial class CARE
     {
-        public int CARETAKER_ID { get; set; }
+        public int CARE_ID { get; set; }
         public int ELDERLY_ID { get; set; }
-        public System.DateTime CARE_SCHEDULE_DAY { get; set; }
-        public System.DateTime CARE_SCHEDULE_START_TIME { get; set; }
-        public System.DateTime CARE_SCHEDULE_END_TIME { get; set; }
-        public decimal CARE_SCHEDULE_FREQUENCY { get; set; }
+        public Nullable<int> CARETAKER_ID { get; set; }
+        public Nullable<System.DateTime> CARE_SCHEDULE_DAY { get; set; }
+        public Nullable<System.DateTime> CARE_SCHEDULE_START_TIME { get; set; }
+        public Nullable<System.DateTime> CARE_SCHEDULE_END_TIME { get; set; }
+        public Nullable<decimal> CARE_SCHEDULE_FREQUENCY { get; set; }
         public string CARE_STATE { get; set; }
-        public decimal CARE_PRICE { get; set; }
+        public Nullable<decimal> CARE_PRICE { get; set; }
+        public string CARETAKER_GENDER { get; set; }
+        public Nullable<decimal> CARETAKER_EXPERIENCE { get; set; }
     
         public virtual CARETAKER CARETAKER { get; set; }
         public virtual THEELDERLY THEELDERLY { get; set; }

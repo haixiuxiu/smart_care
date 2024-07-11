@@ -29,14 +29,11 @@ namespace WebApplication1.Models
         public virtual DbSet<ADVICE> ADVICE { get; set; }
         public virtual DbSet<APPORDER> APPORDER { get; set; }
         public virtual DbSet<APPUSER> APPUSER { get; set; }
-        public virtual DbSet<CARE> CARE { get; set; }
         public virtual DbSet<CARETAKER> CARETAKER { get; set; }
         public virtual DbSet<CHECK_RECORD> CHECK_RECORD { get; set; }
         public virtual DbSet<COLLECTION_ACTIVITY> COLLECTION_ACTIVITY { get; set; }
-        public virtual DbSet<COMMENTREVIEW> COMMENTREVIEW { get; set; }
         public virtual DbSet<COMMENTTHUMBSUP> COMMENTTHUMBSUP { get; set; }
         public virtual DbSet<COMMUNITY_DOCTOR> COMMUNITY_DOCTOR { get; set; }
-        public virtual DbSet<DISCUSSION> DISCUSSION { get; set; }
         public virtual DbSet<DRUG> DRUG { get; set; }
         public virtual DbSet<DRUG_LOG> DRUG_LOG { get; set; }
         public virtual DbSet<DRUG_STORE> DRUG_STORE { get; set; }
@@ -47,10 +44,13 @@ namespace WebApplication1.Models
         public virtual DbSet<JOIN_ACTIVITY> JOIN_ACTIVITY { get; set; }
         public virtual DbSet<MEDICAL_HISTORY> MEDICAL_HISTORY { get; set; }
         public virtual DbSet<PHARMACY_ADMIN> PHARMACY_ADMIN { get; set; }
-        public virtual DbSet<PUBLICATION_DISCUSSION> PUBLICATION_DISCUSSION { get; set; }
         public virtual DbSet<PURCHASE> PURCHASE { get; set; }
         public virtual DbSet<REPLYCOMMENT> REPLYCOMMENT { get; set; }
         public virtual DbSet<THEELDERLY> THEELDERLY { get; set; }
         public virtual DbSet<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
+        public virtual DbSet<CARE> CARE { get; set; }
+        public virtual DbSet<ORDERED> ORDERED { get; set; }
+        public virtual DbSet<SUPERVISOR> SUPERVISOR { get; set; }
+        public virtual DbSet<DISCUSSION> DISCUSSION { get; set; }
     }
 }

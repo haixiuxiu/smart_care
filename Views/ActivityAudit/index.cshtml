@@ -1,22 +1,12 @@
-﻿@model List<WebApplication1.Models.EVENT>
-
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "活动审核";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>活动审核</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <meta charset="utf-8">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/bootstrap-icons.css" rel="stylesheet">
-    <link href="~/Content/tooplate-mini-finance.css" rel="stylesheet">
-    <title>管理员审核活动</title>
-</head>
-<body>
-    <div class="container-fluid">
+<div class="container-fluid">
+    <div id="app">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse">
                 <div class="position-sticky py-4 px-3 sidebar-sticky">
@@ -64,36 +54,25 @@
                     <div class="col-lg-12 col-12">
                         <div class="custom-block bg-white">
                             <h5 class="mb-4">待审核活动</h5>
-                            @if (ViewBag.ErrorMessage != null)
-                            {
-                                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-                            }
-                            else if (!Model.Any())
-                            {
-                                <div class="alert alert-info">没有待审核的活动。</div>
-                            }
-                            else
-                            {
-                                <div class="row">
-                                    @foreach (var item in Model)
-                                    {
-                                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    @item.EVENT_NAME
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">ID: @item.EVENT_ID</h5>
-                                                    <p class="card-text">时间: @item.EVENT_DATE.ToString("yyyy-MM-dd HH:mm")</p>
-                                                    <a href="@Url.Action("Approve", new { id = item.EVENT_ID })" class="btn btn-success btn-sm">审核</a>
-                                                    <a href="@Url.Action("Details", new { id = item.EVENT_ID })" class="btn btn-info btn-sm">详情</a>
-                                                    <a href="@Url.Action("Delete", new { id = item.EVENT_ID })" class="btn btn-danger btn-sm">删除</a>
-                                                </div>
-                                            </div>
+                            <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+                            <div v-else-if="!activities.length" class="alert alert-info">没有待审核的活动。</div>
+                            <div class="row">
+                                <div v-for="activity in activities" :key="activity.EVENT_ID" class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            {{ activity.EVENT_NAME }}
                                         </div>
-                                    }
+                                        <div class="card-body">
+                                            <h5 class="card-title">ID: {{ activity.EVENT_ID }}</h5>
+                                            <p class="card-text">时间: {{ activity.EVENT_DATE }}</p>
+                                            <a :href="`/ActivityAudit/Approve/${activity.EVENT_ID}`" class="btn btn-success btn-sm">审核通过</a>
+                                            <a :href="`/ActivityDetail/index/${activity.EVENT_ID}`" class="btn btn-info btn-sm">详情</a>
+
+                                            <a :href="`/ActivityAudit/Delete/${activity.EVENT_ID}`" class="btn btn-danger btn-sm">驳回</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            }
+                            </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center mb-0">
                                     <li class="page-item">
@@ -123,9 +102,10 @@
             </main>
         </div>
     </div>
+</div>
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-    <script src="~/Scripts/custom.js"></script>
-</body>
-</html>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<script src="~/Scripts/activity-list.js"></script>
+<script src="~/Scripts/custom.js"></script>

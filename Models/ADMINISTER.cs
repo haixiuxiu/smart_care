@@ -18,7 +18,6 @@ namespace WebApplication1.Models
         public ADMINISTER()
         {
             this.COLLECTION_ACTIVITY = new HashSet<COLLECTION_ACTIVITY>();
-            this.COMMENTREVIEW = new HashSet<COMMENTREVIEW>();
             this.EVENTCHECK = new HashSet<EVENTCHECK>();
         }
     
@@ -33,8 +32,6 @@ namespace WebApplication1.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COLLECTION_ACTIVITY> COLLECTION_ACTIVITY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COMMENTREVIEW> COMMENTREVIEW { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EVENTCHECK> EVENTCHECK { get; set; }
     }

@@ -5,13 +5,13 @@
       <PropertyRef Name="ADMINISTER_ID" />
     </Key>
     <Property Name="ADMINISTER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ADMINISTER_WORKDAY" Type="date" Nullable="false" />
-    <Property Name="ADMINISTER_EMAIL" Type="varchar2" MaxLength="32" Nullable="false" />
-    <Property Name="ADMINISTER_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="ADMINISTER_PHONE" Type="varchar2" MaxLength="11" Nullable="false" />
+    <Property Name="ADMINISTER_WORKDAY" Type="date" />
+    <Property Name="ADMINISTER_EMAIL" Type="varchar2" MaxLength="32" />
+    <Property Name="ADMINISTER_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="ADMINISTER_PHONE" Type="varchar2" MaxLength="11" />
     <Property Name="ADMINISTER_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="ADMINISTER_PROFILE" Type="varchar2" MaxLength="256" Nullable="false" />
-    <Property Name="ADMINISTER_STATUS" Type="varchar2" MaxLength="14" Nullable="false" />
+    <Property Name="ADMINISTER_PROFILE" Type="varchar2" MaxLength="256" />
+    <Property Name="ADMINISTER_STATUS" Type="varchar2" MaxLength="14" />
   </EntityType>
   <EntityType Name="ADVICE">
     <Key>
@@ -20,10 +20,10 @@
     <Property Name="ADVICE_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="DOCTOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ADVICE_CONTENT" Type="varchar2" MaxLength="1024" Nullable="false" />
-    <Property Name="ADVICE_LABEL" Type="number" Precision="1" Scale="0" Nullable="false" />
-    <Property Name="ADVICE_DATE" Type="date" Nullable="false" />
-    <Property Name="ADVICE_VISABLE" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="ADVICE_CONTENT" Type="varchar2" MaxLength="1024" />
+    <Property Name="ADVICE_LABEL" Type="number" Precision="1" Scale="0" />
+    <Property Name="ADVICE_DATE" Type="date" />
+    <Property Name="ADVICE_VISABLE" Type="number" Precision="1" Scale="0" />
   </EntityType>
   <EntityType Name="APPORDER">
     <Key>
@@ -55,37 +55,37 @@
   </EntityType>
   <EntityType Name="CARE">
     <Key>
-      <PropertyRef Name="CARETAKER_ID" />
-      <PropertyRef Name="ELDERLY_ID" />
-      <PropertyRef Name="CARE_SCHEDULE_DAY" />
-      <PropertyRef Name="CARE_SCHEDULE_START_TIME" />
-      <PropertyRef Name="CARE_SCHEDULE_END_TIME" />
-      <PropertyRef Name="CARE_SCHEDULE_FREQUENCY" />
+      <PropertyRef Name="CARE_ID" />
     </Key>
-    <Property Name="CARETAKER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CARE_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="CARE_SCHEDULE_DAY" Type="date" Nullable="false" />
-    <Property Name="CARE_SCHEDULE_START_TIME" Type="timestamp" Precision="6" Nullable="false" />
-    <Property Name="CARE_SCHEDULE_END_TIME" Type="timestamp" Precision="6" Nullable="false" />
-    <Property Name="CARE_SCHEDULE_FREQUENCY" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="CARE_STATE" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="CARE_PRICE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CARETAKER_ID" Type="number" Precision="10" Scale="0" />
+    <Property Name="CARE_SCHEDULE_DAY" Type="date" />
+    <Property Name="CARE_SCHEDULE_START_TIME" Type="timestamp" Precision="6" />
+    <Property Name="CARE_SCHEDULE_END_TIME" Type="timestamp" Precision="6" />
+    <Property Name="CARE_SCHEDULE_FREQUENCY" Type="number" Precision="38" Scale="0" />
+    <Property Name="CARE_STATE" Type="varchar2" MaxLength="20" />
+    <Property Name="CARE_PRICE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CARETAKER_GENDER" Type="varchar2" MaxLength="20" />
+    <Property Name="CARETAKER_EXPERIENCE" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="CARETAKER">
     <Key>
       <PropertyRef Name="CARETAKER_ID" />
     </Key>
     <Property Name="CARETAKER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="CARETAKER_EXPERIENCE" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="CARETAKER_TYPE" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="CARETAKER_PHONE" Type="varchar2" MaxLength="11" Nullable="false" />
+    <Property Name="CARETAKER_EXPERIENCE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CARETAKER_TYPE" Type="number" Precision="38" Scale="0" />
+    <Property Name="CARETAKER_PHONE" Type="varchar2" MaxLength="11" />
     <Property Name="CARETAKER_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="CARETAKER_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="CARETAKER_PROFILE" Type="varchar2" MaxLength="256" Nullable="false" />
-    <Property Name="CARETAKER_CREATETIME" Type="date" Nullable="false" />
-    <Property Name="CARETAKER_GENDER" Type="varchar2" MaxLength="1" Nullable="false" />
-    <Property Name="CARETAKER_STATUS" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CARETAKER_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="CARETAKER_PROFILE" Type="varchar2" MaxLength="256" />
+    <Property Name="CARETAKER_CREATETIME" Type="date" />
+    <Property Name="CARETAKER_GENDER" Type="varchar2" MaxLength="1" />
+    <Property Name="CARETAKER_STATUS" Type="varchar2" MaxLength="20" />
   </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“C##TESTUSER.CHECK_RECORD”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="CHECK_RECORD">
     <Key>
       <PropertyRef Name="CHECK_ID" />
@@ -95,12 +95,12 @@
     <Property Name="CHECK_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="DOCTOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="BODY_MASS_INDEX" Type="number" Precision="5" Scale="5" />
-    <Property Name="DIASTOLIC_PRESSURE" Type="number" Precision="5" Scale="5" />
-    <Property Name="SYSTOLIC_PRESSURE" Type="number" Precision="5" Scale="5" />
+    <Property Name="BODY_MASS_INDEX" Type="number" Precision="10" Scale="5" />
+    <Property Name="DIASTOLIC_PRESSURE" Type="number" Precision="10" Scale="5" />
+    <Property Name="SYSTOLIC_PRESSURE" Type="number" Precision="10" Scale="5" />
     <Property Name="HEART_RATE" Type="number" Precision="38" Scale="0" />
-    <Property Name="BLOOD_OXYGEN_SATURATION" Type="number" Precision="3" Scale="3" />
-    <Property Name="BLOOD_LIPIDS" Type="number" Precision="4" Scale="4" />
+    <Property Name="BLOOD_OXYGEN_SATURATION" Type="float" Precision="63" Scale="0" />
+    <Property Name="BLOOD_LIPIDS" Type="number" Precision="10" Scale="4" />
     <Property Name="CHECK_NAME" Type="varchar2" MaxLength="32" Nullable="false" />
     <Property Name="CHECK_RESULT" Type="varchar2" MaxLength="400" />
     <Property Name="CHECK_FEE" Type="number" Precision="10" Scale="2" Nullable="false" />
@@ -116,18 +116,6 @@
     <Property Name="COLLECTION_TIME" Type="date" Nullable="false" />
     <Property Name="UPDATE_TIME" Type="date" Nullable="false" />
     <Property Name="COLLECTION_STATE" Type="number" Precision="2" Scale="0" Nullable="false" />
-  </EntityType>
-  <EntityType Name="COMMENTREVIEW">
-    <Key>
-      <PropertyRef Name="ADMINISTRATOR_ID" />
-      <PropertyRef Name="ACTIVITY_ID" />
-      <PropertyRef Name="COMMENT_ID" />
-    </Key>
-    <Property Name="ADMINISTRATOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ACTIVITY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="COMMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="REVIEW_DATE" Type="date" Nullable="false" />
-    <Property Name="RESULT" Type="varchar2" MaxLength="10" />
   </EntityType>
   <EntityType Name="COMMENTTHUMBSUP">
     <Key>
@@ -146,14 +134,14 @@
       <PropertyRef Name="COMMUNITY_DOCTOR_ID" />
     </Key>
     <Property Name="COMMUNITY_DOCTOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="COMMUNITY_DOCTOR_CITY" Type="varchar2" MaxLength="54" Nullable="false" />
-    <Property Name="COMMUNITY_DOCTOR_HOSPITAL" Type="varchar2" MaxLength="54" Nullable="false" />
-    <Property Name="COMMUNITY_DOCTOR_DEPARTMENT" Type="varchar2" MaxLength="36" Nullable="false" />
-    <Property Name="COMMUNITY_EMAIL" Type="varchar2" MaxLength="32" Nullable="false" />
-    <Property Name="COMMUNITY_PHONE" Type="varchar2" MaxLength="11" Nullable="false" />
+    <Property Name="COMMUNITY_DOCTOR_CITY" Type="varchar2" MaxLength="54" />
+    <Property Name="COMMUNITY_DOCTOR_HOSPITAL" Type="varchar2" MaxLength="54" />
+    <Property Name="COMMUNITY_DOCTOR_DEPARTMENT" Type="varchar2" MaxLength="36" />
+    <Property Name="COMMUNITY_EMAIL" Type="varchar2" MaxLength="32" />
+    <Property Name="COMMUNITY_PHONE" Type="varchar2" MaxLength="11" />
     <Property Name="COMMUNITY_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="COMMUNITY_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="COMMUNITY_STATUS" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="COMMUNITY_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="COMMUNITY_STATUS" Type="varchar2" MaxLength="12" />
   </EntityType>
   <EntityType Name="DISCUSSION">
     <Key>
@@ -165,10 +153,8 @@
     <Property Name="USER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="ACTIVITY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="COMMENT_CONTENT" Type="varchar2" MaxLength="500" Nullable="false" />
-    <Property Name="AUDIT_STATUS" Type="varchar2" MaxLength="10" Nullable="false" />
     <Property Name="COMMENT_TIME" Type="timestamp" Precision="6" Nullable="false" />
     <Property Name="LIKES_NUMBER" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="COMMENT_STATUS" Type="number" Precision="1" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="DRUG">
     <Key>
@@ -247,6 +233,7 @@
     <Property Name="STAR_NUMBER" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="PARTICIPANT_NUMBER" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="INITIATOR_ID" Type="number" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="EVENT_STATE" Type="varchar2" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="EVENTCHECK">
     <Key>
@@ -281,30 +268,35 @@
     <Property Name="DISEASE_CATEGORY" Type="varchar2" MaxLength="20" Nullable="false" />
     <Property Name="HOSPITAL_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="ORDERED">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="CARETAKER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ORDER_TIME" Type="date" Nullable="false" />
+    <Property Name="ORDER_TYPE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ORDER_STATE" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="ORDER_PRICE" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ORDER_DURATION" Type="varchar2" MaxLength="256" Nullable="false" />
+    <Property Name="ORDER_GENDER" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CARETAKER_EXPERIENCE" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="PHARMACY_ADMIN">
     <Key>
       <PropertyRef Name="PA_ID" />
     </Key>
     <Property Name="PA_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PA_CERTIFICATE" Type="varchar2" MaxLength="256" Nullable="false" />
-    <Property Name="PA_EMAIL" Type="varchar2" MaxLength="32" Nullable="false" />
-    <Property Name="PA_PHONE" Type="varchar2" MaxLength="11" Nullable="false" />
+    <Property Name="PA_CERTIFICATE" Type="varchar2" MaxLength="256" />
+    <Property Name="PA_EMAIL" Type="varchar2" MaxLength="32" />
+    <Property Name="PA_PHONE" Type="varchar2" MaxLength="11" />
     <Property Name="PA_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="PA_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="PA_PROFILE" Type="varchar2" MaxLength="256" Nullable="false" />
-    <Property Name="PA_GENDER" Type="varchar2" MaxLength="1" Nullable="false" />
-    <Property Name="PA_CREATETIME" Type="date" Nullable="false" />
-    <Property Name="PA_EXPERIENCE" Type="number" Precision="38" Scale="0" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PUBLICATION_DISCUSSION">
-    <Key>
-      <PropertyRef Name="USER_ID" />
-      <PropertyRef Name="ACTIVITY_ID" />
-      <PropertyRef Name="COMMENT_ID" />
-    </Key>
-    <Property Name="USER_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ACTIVITY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="COMMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PA_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="PA_PROFILE" Type="varchar2" MaxLength="256" />
+    <Property Name="PA_GENDER" Type="varchar2" MaxLength="1" />
+    <Property Name="PA_CREATETIME" Type="date" />
+    <Property Name="PA_EXPERIENCE" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="PURCHASE">
     <Key>
@@ -329,20 +321,40 @@
     <Property Name="ACTIVITY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="COMMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
+  <EntityType Name="SUPERVISOR">
+    <Key>
+      <PropertyRef Name="SUPERVISOR_ID" />
+    </Key>
+    <Property Name="SUPERVISOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="SUPERVISOR_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="SUPERVISOR_PHONE" Type="varchar2" MaxLength="11" />
+    <Property Name="SUPERVISOR_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="SUPERVISOR_PROFILE" Type="varchar2" MaxLength="256" />
+    <Property Name="SUPERVISOR_CREATE_TIME" Type="date" />
+    <Property Name="SUPERVISOR_GENDER" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SUPERVISOR_ELDERLY">
+    <Key>
+      <PropertyRef Name="SUPERVISOR_ID" />
+      <PropertyRef Name="ELDERLY_ID" />
+    </Key>
+    <Property Name="SUPERVISOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
   <EntityType Name="THEELDERLY">
     <Key>
       <PropertyRef Name="ELDERLY_ID" />
     </Key>
     <Property Name="ELDERLY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ELDERLY_ADDRESS" Type="varchar2" MaxLength="256" Nullable="false" />
+    <Property Name="ELDERLY_ADDRESS" Type="varchar2" MaxLength="256" />
     <Property Name="ELDERLY_PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="ELDERLY_PHONE" Type="varchar2" MaxLength="11" Nullable="false" />
-    <Property Name="ELDERLY_NAME" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="ELDERLY_PROFILE" Type="varchar2" MaxLength="256" Nullable="false" />
-    <Property Name="ELDERLY_BIRTHDAY" Type="date" Nullable="false" />
-    <Property Name="ELDERLY_STATUS" Type="varchar2" MaxLength="12" Nullable="false" />
-    <Property Name="ELDERLY_GENDER" Type="varchar2" MaxLength="1" Nullable="false" />
-    <Property Name="ELDERLY_CREATE_TIME" Type="date" Nullable="false" />
+    <Property Name="ELDERLY_PHONE" Type="varchar2" MaxLength="11" />
+    <Property Name="ELDERLY_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="ELDERLY_PROFILE" Type="varchar2" MaxLength="256" />
+    <Property Name="ELDERLY_BIRTHDAY" Type="date" />
+    <Property Name="ELDERLY_STATUS" Type="varchar2" MaxLength="12" />
+    <Property Name="ELDERLY_GENDER" Type="varchar2" MaxLength="1" />
+    <Property Name="ELDERLY_CREATE_TIME" Type="date" />
   </EntityType>
   <EntityType Name="THUMBSUP_ACTIVITY">
     <Key>
@@ -403,7 +415,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="CARE_FK1">
-    <End Role="CARETAKER" Type="Self.CARETAKER" Multiplicity="1" />
+    <End Role="CARETAKER" Type="Self.CARETAKER" Multiplicity="0..1" />
     <End Role="CARE" Type="Self.CARE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CARETAKER">
@@ -423,18 +435,6 @@
       </Principal>
       <Dependent Role="CARE">
         <PropertyRef Name="ELDERLY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CARETAKER_FK1">
-    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
-    <End Role="CARETAKER" Type="Self.CARETAKER" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="APPUSER">
-        <PropertyRef Name="USER_ID" />
-      </Principal>
-      <Dependent Role="CARETAKER">
-        <PropertyRef Name="CARETAKER_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -519,30 +519,6 @@
       </Principal>
       <Dependent Role="COLLECTION_ACTIVITY">
         <PropertyRef Name="USER_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="COMMENTREVIEW_FK1">
-    <End Role="ADMINISTER" Type="Self.ADMINISTER" Multiplicity="1" />
-    <End Role="COMMENTREVIEW" Type="Self.COMMENTREVIEW" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ADMINISTER">
-        <PropertyRef Name="ADMINISTER_ID" />
-      </Principal>
-      <Dependent Role="COMMENTREVIEW">
-        <PropertyRef Name="ADMINISTRATOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="COMMENTREVIEW_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="COMMENTREVIEW" Type="Self.COMMENTREVIEW" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="COMMENTREVIEW">
-        <PropertyRef Name="ACTIVITY_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -643,54 +619,6 @@
       </Principal>
       <Dependent Role="COMMENTTHUMBSUP">
         <PropertyRef Name="INITIATOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DISCUSSION_FK1">
-    <End Role="CARETAKER" Type="Self.CARETAKER" Multiplicity="1" />
-    <End Role="DISCUSSION" Type="Self.DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CARETAKER">
-        <PropertyRef Name="CARETAKER_ID" />
-      </Principal>
-      <Dependent Role="DISCUSSION">
-        <PropertyRef Name="USER_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DISCUSSION_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="DISCUSSION" Type="Self.DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="DISCUSSION">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DISCUSSION_FK3">
-    <End Role="COMMUNITY_DOCTOR" Type="Self.COMMUNITY_DOCTOR" Multiplicity="1" />
-    <End Role="DISCUSSION" Type="Self.DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="COMMUNITY_DOCTOR">
-        <PropertyRef Name="COMMUNITY_DOCTOR_ID" />
-      </Principal>
-      <Dependent Role="DISCUSSION">
-        <PropertyRef Name="USER_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DISCUSSION_FK4">
-    <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
-    <End Role="DISCUSSION" Type="Self.DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="THEELDERLY">
-        <PropertyRef Name="ELDERLY_ID" />
-      </Principal>
-      <Dependent Role="DISCUSSION">
-        <PropertyRef Name="USER_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -862,67 +790,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PUBLICATION_DISCUSSION_FK1">
+  <Association Name="ORDERED_FK1">
     <End Role="CARETAKER" Type="Self.CARETAKER" Multiplicity="1" />
-    <End Role="PUBLICATION_DISCUSSION" Type="Self.PUBLICATION_DISCUSSION" Multiplicity="*" />
+    <End Role="ORDERED" Type="Self.ORDERED" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CARETAKER">
         <PropertyRef Name="CARETAKER_ID" />
       </Principal>
-      <Dependent Role="PUBLICATION_DISCUSSION">
-        <PropertyRef Name="USER_ID" />
+      <Dependent Role="ORDERED">
+        <PropertyRef Name="CARETAKER_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PUBLICATION_DISCUSSION_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="PUBLICATION_DISCUSSION" Type="Self.PUBLICATION_DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="PUBLICATION_DISCUSSION">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PUBLICATION_DISCUSSION_FK3">
-    <End Role="DISCUSSION" Type="Self.DISCUSSION" Multiplicity="1" />
-    <End Role="PUBLICATION_DISCUSSION" Type="Self.PUBLICATION_DISCUSSION" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="DISCUSSION">
-        <PropertyRef Name="COMMENT_ID" />
-        <PropertyRef Name="USER_ID" />
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Principal>
-      <Dependent Role="PUBLICATION_DISCUSSION">
-        <PropertyRef Name="COMMENT_ID" />
-        <PropertyRef Name="USER_ID" />
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PUBLICATION_DISCUSSION_FK4">
-    <End Role="COMMUNITY_DOCTOR" Type="Self.COMMUNITY_DOCTOR" Multiplicity="1" />
-    <End Role="PUBLICATION_DISCUSSION" Type="Self.PUBLICATION_DISCUSSION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="COMMUNITY_DOCTOR">
-        <PropertyRef Name="COMMUNITY_DOCTOR_ID" />
-      </Principal>
-      <Dependent Role="PUBLICATION_DISCUSSION">
-        <PropertyRef Name="USER_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PUBLICATION_DISCUSSION_FK5">
+  <Association Name="ORDERED_FK2">
     <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
-    <End Role="PUBLICATION_DISCUSSION" Type="Self.PUBLICATION_DISCUSSION" Multiplicity="*" />
+    <End Role="ORDERED" Type="Self.ORDERED" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="THEELDERLY">
         <PropertyRef Name="ELDERLY_ID" />
       </Principal>
-      <Dependent Role="PUBLICATION_DISCUSSION">
-        <PropertyRef Name="USER_ID" />
+      <Dependent Role="ORDERED">
+        <PropertyRef Name="ELDERLY_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -973,6 +861,30 @@
       </Principal>
       <Dependent Role="REPLYCOMMENT">
         <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SUPERVISOR_ELDERLY_FK1">
+    <End Role="SUPERVISOR" Type="Self.SUPERVISOR" Multiplicity="1" />
+    <End Role="SUPERVISOR_ELDERLY" Type="Self.SUPERVISOR_ELDERLY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPERVISOR">
+        <PropertyRef Name="SUPERVISOR_ID" />
+      </Principal>
+      <Dependent Role="SUPERVISOR_ELDERLY">
+        <PropertyRef Name="SUPERVISOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SUPERVISOR_ELDERLY_FK2">
+    <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
+    <End Role="SUPERVISOR_ELDERLY" Type="Self.SUPERVISOR_ELDERLY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THEELDERLY">
+        <PropertyRef Name="ELDERLY_ID" />
+      </Principal>
+      <Dependent Role="SUPERVISOR_ELDERLY">
+        <PropertyRef Name="ELDERLY_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1031,9 +943,7 @@
     <EntitySet Name="APPUSER" EntityType="Self.APPUSER" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="CARE" EntityType="Self.CARE" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="CARETAKER" EntityType="Self.CARETAKER" Schema="C##TESTUSER" store:Type="Tables" />
-    <EntitySet Name="CHECK_RECORD" EntityType="Self.CHECK_RECORD" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="COLLECTION_ACTIVITY" EntityType="Self.COLLECTION_ACTIVITY" Schema="C##TESTUSER" store:Type="Tables" />
-    <EntitySet Name="COMMENTREVIEW" EntityType="Self.COMMENTREVIEW" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="COMMENTTHUMBSUP" EntityType="Self.COMMENTTHUMBSUP" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="COMMUNITY_DOCTOR" EntityType="Self.COMMUNITY_DOCTOR" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="DISCUSSION" EntityType="Self.DISCUSSION" Schema="C##TESTUSER" store:Type="Tables" />
@@ -1046,12 +956,31 @@
     <EntitySet Name="EVENTCHECK" EntityType="Self.EVENTCHECK" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="JOIN_ACTIVITY" EntityType="Self.JOIN_ACTIVITY" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="MEDICAL_HISTORY" EntityType="Self.MEDICAL_HISTORY" Schema="C##TESTUSER" store:Type="Tables" />
+    <EntitySet Name="ORDERED" EntityType="Self.ORDERED" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="PHARMACY_ADMIN" EntityType="Self.PHARMACY_ADMIN" Schema="C##TESTUSER" store:Type="Tables" />
-    <EntitySet Name="PUBLICATION_DISCUSSION" EntityType="Self.PUBLICATION_DISCUSSION" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="PURCHASE" EntityType="Self.PURCHASE" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="REPLYCOMMENT" EntityType="Self.REPLYCOMMENT" Schema="C##TESTUSER" store:Type="Tables" />
+    <EntitySet Name="SUPERVISOR" EntityType="Self.SUPERVISOR" Schema="C##TESTUSER" store:Type="Tables" />
+    <EntitySet Name="SUPERVISOR_ELDERLY" EntityType="Self.SUPERVISOR_ELDERLY" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="THEELDERLY" EntityType="Self.THEELDERLY" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="THUMBSUP_ACTIVITY" EntityType="Self.THUMBSUP_ACTIVITY" Schema="C##TESTUSER" store:Type="Tables" />
+    <EntitySet Name="CHECK_RECORD" EntityType="Self.CHECK_RECORD" store:Type="Tables" store:Schema="C##TESTUSER">
+      <DefiningQuery>SELECT 
+"CHECK_RECORD"."CHECK_ID" AS "CHECK_ID", 
+"CHECK_RECORD"."ELDERLY_ID" AS "ELDERLY_ID", 
+"CHECK_RECORD"."DOCTOR_ID" AS "DOCTOR_ID", 
+"CHECK_RECORD"."BODY_MASS_INDEX" AS "BODY_MASS_INDEX", 
+"CHECK_RECORD"."DIASTOLIC_PRESSURE" AS "DIASTOLIC_PRESSURE", 
+"CHECK_RECORD"."SYSTOLIC_PRESSURE" AS "SYSTOLIC_PRESSURE", 
+"CHECK_RECORD"."HEART_RATE" AS "HEART_RATE", 
+"CHECK_RECORD"."BLOOD_OXYGEN_SATURATION" AS "BLOOD_OXYGEN_SATURATION", 
+"CHECK_RECORD"."BLOOD_LIPIDS" AS "BLOOD_LIPIDS", 
+"CHECK_RECORD"."CHECK_NAME" AS "CHECK_NAME", 
+"CHECK_RECORD"."CHECK_RESULT" AS "CHECK_RESULT", 
+"CHECK_RECORD"."CHECK_FEE" AS "CHECK_FEE", 
+"CHECK_RECORD"."CHECK_DATE" AS "CHECK_DATE"
+FROM "C##TESTUSER"."CHECK_RECORD" "CHECK_RECORD"</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="ADVICE_FK1" Association="Self.ADVICE_FK1">
       <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
       <End Role="ADVICE" EntitySet="ADVICE" />
@@ -1075,10 +1004,6 @@
     <AssociationSet Name="CARE_FK2" Association="Self.CARE_FK2">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="CARE" EntitySet="CARE" />
-    </AssociationSet>
-    <AssociationSet Name="CARETAKER_FK1" Association="Self.CARETAKER_FK1">
-      <End Role="APPUSER" EntitySet="APPUSER" />
-      <End Role="CARETAKER" EntitySet="CARETAKER" />
     </AssociationSet>
     <AssociationSet Name="CHECK_RECORD_FK1" Association="Self.CHECK_RECORD_FK1">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
@@ -1107,14 +1032,6 @@
     <AssociationSet Name="COLLECTION_ACTIVITY_FK5" Association="Self.COLLECTION_ACTIVITY_FK5">
       <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
       <End Role="COLLECTION_ACTIVITY" EntitySet="COLLECTION_ACTIVITY" />
-    </AssociationSet>
-    <AssociationSet Name="COMMENTREVIEW_FK1" Association="Self.COMMENTREVIEW_FK1">
-      <End Role="ADMINISTER" EntitySet="ADMINISTER" />
-      <End Role="COMMENTREVIEW" EntitySet="COMMENTREVIEW" />
-    </AssociationSet>
-    <AssociationSet Name="COMMENTREVIEW_FK2" Association="Self.COMMENTREVIEW_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="COMMENTREVIEW" EntitySet="COMMENTREVIEW" />
     </AssociationSet>
     <AssociationSet Name="COMMENTTHUMBSUP_FK1" Association="Self.COMMENTTHUMBSUP_FK1">
       <End Role="CARETAKER" EntitySet="CARETAKER" />
@@ -1147,22 +1064,6 @@
     <AssociationSet Name="COMMENTTHUMBSUP_FK8" Association="Self.COMMENTTHUMBSUP_FK8">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="COMMENTTHUMBSUP" EntitySet="COMMENTTHUMBSUP" />
-    </AssociationSet>
-    <AssociationSet Name="DISCUSSION_FK1" Association="Self.DISCUSSION_FK1">
-      <End Role="CARETAKER" EntitySet="CARETAKER" />
-      <End Role="DISCUSSION" EntitySet="DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="DISCUSSION_FK2" Association="Self.DISCUSSION_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="DISCUSSION" EntitySet="DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="DISCUSSION_FK3" Association="Self.DISCUSSION_FK3">
-      <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
-      <End Role="DISCUSSION" EntitySet="DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="DISCUSSION_FK4" Association="Self.DISCUSSION_FK4">
-      <End Role="THEELDERLY" EntitySet="THEELDERLY" />
-      <End Role="DISCUSSION" EntitySet="DISCUSSION" />
     </AssociationSet>
     <AssociationSet Name="DRUG_LOG_FK1" Association="Self.DRUG_LOG_FK1">
       <End Role="APPUSER" EntitySet="APPUSER" />
@@ -1220,25 +1121,13 @@
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="MEDICAL_HISTORY" EntitySet="MEDICAL_HISTORY" />
     </AssociationSet>
-    <AssociationSet Name="PUBLICATION_DISCUSSION_FK1" Association="Self.PUBLICATION_DISCUSSION_FK1">
+    <AssociationSet Name="ORDERED_FK1" Association="Self.ORDERED_FK1">
       <End Role="CARETAKER" EntitySet="CARETAKER" />
-      <End Role="PUBLICATION_DISCUSSION" EntitySet="PUBLICATION_DISCUSSION" />
+      <End Role="ORDERED" EntitySet="ORDERED" />
     </AssociationSet>
-    <AssociationSet Name="PUBLICATION_DISCUSSION_FK2" Association="Self.PUBLICATION_DISCUSSION_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="PUBLICATION_DISCUSSION" EntitySet="PUBLICATION_DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="PUBLICATION_DISCUSSION_FK3" Association="Self.PUBLICATION_DISCUSSION_FK3">
-      <End Role="DISCUSSION" EntitySet="DISCUSSION" />
-      <End Role="PUBLICATION_DISCUSSION" EntitySet="PUBLICATION_DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="PUBLICATION_DISCUSSION_FK4" Association="Self.PUBLICATION_DISCUSSION_FK4">
-      <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
-      <End Role="PUBLICATION_DISCUSSION" EntitySet="PUBLICATION_DISCUSSION" />
-    </AssociationSet>
-    <AssociationSet Name="PUBLICATION_DISCUSSION_FK5" Association="Self.PUBLICATION_DISCUSSION_FK5">
+    <AssociationSet Name="ORDERED_FK2" Association="Self.ORDERED_FK2">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
-      <End Role="PUBLICATION_DISCUSSION" EntitySet="PUBLICATION_DISCUSSION" />
+      <End Role="ORDERED" EntitySet="ORDERED" />
     </AssociationSet>
     <AssociationSet Name="PURCHASE_FK1" Association="Self.PURCHASE_FK1">
       <End Role="PHARMACY_ADMIN" EntitySet="PHARMACY_ADMIN" />
@@ -1255,6 +1144,14 @@
     <AssociationSet Name="REPLYCOMMENT_FK2" Association="Self.REPLYCOMMENT_FK2">
       <End Role="EVENT" EntitySet="EVENT" />
       <End Role="REPLYCOMMENT" EntitySet="REPLYCOMMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SUPERVISOR_ELDERLY_FK1" Association="Self.SUPERVISOR_ELDERLY_FK1">
+      <End Role="SUPERVISOR" EntitySet="SUPERVISOR" />
+      <End Role="SUPERVISOR_ELDERLY" EntitySet="SUPERVISOR_ELDERLY" />
+    </AssociationSet>
+    <AssociationSet Name="SUPERVISOR_ELDERLY_FK2" Association="Self.SUPERVISOR_ELDERLY_FK2">
+      <End Role="THEELDERLY" EntitySet="THEELDERLY" />
+      <End Role="SUPERVISOR_ELDERLY" EntitySet="SUPERVISOR_ELDERLY" />
     </AssociationSet>
     <AssociationSet Name="THUMBSUP_ACTIVITY_FK1" Association="Self.THUMBSUP_ACTIVITY_FK1">
       <End Role="CARETAKER" EntitySet="CARETAKER" />

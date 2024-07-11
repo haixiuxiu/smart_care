@@ -21,9 +21,7 @@ namespace WebApplication1.Models
             this.COLLECTION_ACTIVITY = new HashSet<COLLECTION_ACTIVITY>();
             this.COMMENTTHUMBSUP = new HashSet<COMMENTTHUMBSUP>();
             this.COMMENTTHUMBSUP1 = new HashSet<COMMENTTHUMBSUP>();
-            this.DISCUSSION = new HashSet<DISCUSSION>();
             this.JOIN_ACTIVITY = new HashSet<JOIN_ACTIVITY>();
-            this.PUBLICATION_DISCUSSION = new HashSet<PUBLICATION_DISCUSSION>();
             this.THUMBSUP_ACTIVITY = new HashSet<THUMBSUP_ACTIVITY>();
             this.ADVICE = new HashSet<ADVICE>();
         }
@@ -47,11 +45,7 @@ namespace WebApplication1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMMENTTHUMBSUP> COMMENTTHUMBSUP1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DISCUSSION> DISCUSSION { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JOIN_ACTIVITY> JOIN_ACTIVITY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PUBLICATION_DISCUSSION> PUBLICATION_DISCUSSION { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
