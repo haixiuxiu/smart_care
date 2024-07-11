@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication1.Models.EVENT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_CONTENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_SITE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EA_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_START_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENT_END_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAR_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PARTICIPANT_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INITIATOR_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EVENTCHECK.REVIEW_RESULT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_CONTENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_SITE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EA_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_START_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENT_END_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAR_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PARTICIPANT_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INITIATOR_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EVENTCHECK.REVIEW_RESULT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EVENT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EVENT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EVENT_ID })
+        </td>
+    </tr>
+}
+
+</table>

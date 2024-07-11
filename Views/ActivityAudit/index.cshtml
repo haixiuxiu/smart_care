@@ -1,0 +1,131 @@
+﻿@model List<WebApplication1.Models.EVENT>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/tooplate-mini-finance.css" rel="stylesheet">
+    <title>管理员审核活动</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse">
+                <div class="position-sticky py-4 px-3 sidebar-sticky">
+                    <ul class="nav flex-column h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">
+                                <i class="bi-house-fill me-2"></i>
+                                概述
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="wallet.html">
+                                <i class="bi-wallet me-2"></i>
+                                活动列表
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">
+                                <i class="bi-person me-2"></i>
+                                个人资料
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="setting.html">
+                                <i class="bi-gear me-2"></i>
+                                设置
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="help-center.html">
+                                <i class="bi-question-circle me-2"></i>
+                                帮助中心
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
+                <div class="title-group mb-3">
+                    <h1 class="h2 mb-0">活动审核</h1>
+                </div>
+
+                <div class="row my-4">
+                    <div class="col-lg-12 col-12">
+                        <div class="custom-block bg-white">
+                            <h5 class="mb-4">待审核活动</h5>
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                            }
+                            else if (!Model.Any())
+                            {
+                                <div class="alert alert-info">没有待审核的活动。</div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    @item.EVENT_NAME
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">ID: @item.EVENT_ID</h5>
+                                                    <p class="card-text">时间: @item.EVENT_DATE.ToString("yyyy-MM-dd HH:mm")</p>
+                                                    <a href="@Url.Action("Approve", new { id = item.EVENT_ID })" class="btn btn-success btn-sm">审核</a>
+                                                    <a href="@Url.Action("Details", new { id = item.EVENT_ID })" class="btn btn-info btn-sm">详情</a>
+                                                    <a href="@Url.Action("Delete", new { id = item.EVENT_ID })" class="btn btn-danger btn-sm">删除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center mb-0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">上一页</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">下一页</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿@model WebApplication1.Models.EVENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EVENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_CONTENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_CONTENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_SITE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_SITE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EA_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EA_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_START_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_START_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENT_END_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENT_END_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAR_NUMBER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAR_NUMBER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTICIPANT_NUMBER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTICIPANT_NUMBER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INITIATOR_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INITIATOR_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EVENTCHECK.REVIEW_RESULT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EVENTCHECK.REVIEW_RESULT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EVENT_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

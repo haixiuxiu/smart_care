@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ADMINISTER">
+      <EntityTypeMapping TypeName="Model.ADMINISTER">
+        <MappingFragment StoreEntitySet="ADMINISTER">
+          <ScalarProperty Name="ADMINISTER_ID" ColumnName="ADMINISTER_ID" />
+          <ScalarProperty Name="ADMINISTER_WORKDAY" ColumnName="ADMINISTER_WORKDAY" />
+          <ScalarProperty Name="ADMINISTER_EMAIL" ColumnName="ADMINISTER_EMAIL" />
+          <ScalarProperty Name="ADMINISTER_NAME" ColumnName="ADMINISTER_NAME" />
+          <ScalarProperty Name="ADMINISTER_PHONE" ColumnName="ADMINISTER_PHONE" />
+          <ScalarProperty Name="ADMINISTER_PASSWORD" ColumnName="ADMINISTER_PASSWORD" />
+          <ScalarProperty Name="ADMINISTER_PROFILE" ColumnName="ADMINISTER_PROFILE" />
+          <ScalarProperty Name="ADMINISTER_STATUS" ColumnName="ADMINISTER_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADVICE">
+      <EntityTypeMapping TypeName="Model.ADVICE">
+        <MappingFragment StoreEntitySet="ADVICE">
+          <ScalarProperty Name="ADVICE_ID" ColumnName="ADVICE_ID" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ADVICE_CONTENT" ColumnName="ADVICE_CONTENT" />
+          <ScalarProperty Name="ADVICE_LABEL" ColumnName="ADVICE_LABEL" />
+          <ScalarProperty Name="ADVICE_DATE" ColumnName="ADVICE_DATE" />
+          <ScalarProperty Name="ADVICE_VISABLE" ColumnName="ADVICE_VISABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPORDER">
+      <EntityTypeMapping TypeName="Model.APPORDER">
+        <MappingFragment StoreEntitySet="APPORDER">
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="CARETAKER_ID" ColumnName="CARETAKER_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ORDER_TIME" ColumnName="ORDER_TIME" />
+          <ScalarProperty Name="ORDER_TYPE" ColumnName="ORDER_TYPE" />
+          <ScalarProperty Name="ORDER_STATE" ColumnName="ORDER_STATE" />
+          <ScalarProperty Name="ORDER_PRICE" ColumnName="ORDER_PRICE" />
+          <ScalarProperty Name="ORDER_DURATION" ColumnName="ORDER_DURATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPUSER">
+      <EntityTypeMapping TypeName="Model.APPUSER">
+        <MappingFragment StoreEntitySet="APPUSER">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_PHONE" ColumnName="USER_PHONE" />
+          <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_PROFILE" ColumnName="USER_PROFILE" />
+          <ScalarProperty Name="USER_CREATETIME" ColumnName="USER_CREATETIME" />
+          <ScalarProperty Name="USER_BIRTHDAY" ColumnName="USER_BIRTHDAY" />
+          <ScalarProperty Name="USER_GENDER" ColumnName="USER_GENDER" />
+          <ScalarProperty Name="USER_STATUS" ColumnName="USER_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARE">
+      <EntityTypeMapping TypeName="Model.CARE">
+        <MappingFragment StoreEntitySet="CARE">
+          <ScalarProperty Name="CARETAKER_ID" ColumnName="CARETAKER_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="CARE_SCHEDULE_DAY" ColumnName="CARE_SCHEDULE_DAY" />
+          <ScalarProperty Name="CARE_SCHEDULE_START_TIME" ColumnName="CARE_SCHEDULE_START_TIME" />
+          <ScalarProperty Name="CARE_SCHEDULE_END_TIME" ColumnName="CARE_SCHEDULE_END_TIME" />
+          <ScalarProperty Name="CARE_SCHEDULE_FREQUENCY" ColumnName="CARE_SCHEDULE_FREQUENCY" />
+          <ScalarProperty Name="CARE_STATE" ColumnName="CARE_STATE" />
+          <ScalarProperty Name="CARE_PRICE" ColumnName="CARE_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARETAKER">
+      <EntityTypeMapping TypeName="Model.CARETAKER">
+        <MappingFragment StoreEntitySet="CARETAKER">
+          <ScalarProperty Name="CARETAKER_STATUS" ColumnName="CARETAKER_STATUS" />
+          <ScalarProperty Name="CARETAKER_ID" ColumnName="CARETAKER_ID" />
+          <ScalarProperty Name="CARETAKER_EXPERIENCE" ColumnName="CARETAKER_EXPERIENCE" />
+          <ScalarProperty Name="CARETAKER_TYPE" ColumnName="CARETAKER_TYPE" />
+          <ScalarProperty Name="CARETAKER_PHONE" ColumnName="CARETAKER_PHONE" />
+          <ScalarProperty Name="CARETAKER_PASSWORD" ColumnName="CARETAKER_PASSWORD" />
+          <ScalarProperty Name="CARETAKER_NAME" ColumnName="CARETAKER_NAME" />
+          <ScalarProperty Name="CARETAKER_PROFILE" ColumnName="CARETAKER_PROFILE" />
+          <ScalarProperty Name="CARETAKER_CREATETIME" ColumnName="CARETAKER_CREATETIME" />
+          <ScalarProperty Name="CARETAKER_GENDER" ColumnName="CARETAKER_GENDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHECK_RECORD">
+      <EntityTypeMapping TypeName="Model.CHECK_RECORD">
+        <MappingFragment StoreEntitySet="CHECK_RECORD">
+          <ScalarProperty Name="CHECK_ID" ColumnName="CHECK_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+          <ScalarProperty Name="BODY_MASS_INDEX" ColumnName="BODY_MASS_INDEX" />
+          <ScalarProperty Name="DIASTOLIC_PRESSURE" ColumnName="DIASTOLIC_PRESSURE" />
+          <ScalarProperty Name="SYSTOLIC_PRESSURE" ColumnName="SYSTOLIC_PRESSURE" />
+          <ScalarProperty Name="HEART_RATE" ColumnName="HEART_RATE" />
+          <ScalarProperty Name="BLOOD_OXYGEN_SATURATION" ColumnName="BLOOD_OXYGEN_SATURATION" />
+          <ScalarProperty Name="BLOOD_LIPIDS" ColumnName="BLOOD_LIPIDS" />
+          <ScalarProperty Name="CHECK_NAME" ColumnName="CHECK_NAME" />
+          <ScalarProperty Name="CHECK_RESULT" ColumnName="CHECK_RESULT" />
+          <ScalarProperty Name="CHECK_FEE" ColumnName="CHECK_FEE" />
+          <ScalarProperty Name="CHECK_DATE" ColumnName="CHECK_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COLLECTION_ACTIVITY">
+      <EntityTypeMapping TypeName="Model.COLLECTION_ACTIVITY">
+        <MappingFragment StoreEntitySet="COLLECTION_ACTIVITY">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COLLECTION_TIME" ColumnName="COLLECTION_TIME" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="COLLECTION_STATE" ColumnName="COLLECTION_STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTREVIEW">
+      <EntityTypeMapping TypeName="Model.COMMENTREVIEW">
+        <MappingFragment StoreEntitySet="COMMENTREVIEW">
+          <ScalarProperty Name="ADMINISTRATOR_ID" ColumnName="ADMINISTRATOR_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+          <ScalarProperty Name="REVIEW_DATE" ColumnName="REVIEW_DATE" />
+          <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTTHUMBSUP">
+      <EntityTypeMapping TypeName="Model.COMMENTTHUMBSUP">
+        <MappingFragment StoreEntitySet="COMMENTTHUMBSUP">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+          <ScalarProperty Name="INITIATOR_ID" ColumnName="INITIATOR_ID" />
+          <ScalarProperty Name="COMMENTSTAR_NUMBER" ColumnName="COMMENTSTAR_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMUNITY_DOCTOR">
+      <EntityTypeMapping TypeName="Model.COMMUNITY_DOCTOR">
+        <MappingFragment StoreEntitySet="COMMUNITY_DOCTOR">
+          <ScalarProperty Name="COMMUNITY_DOCTOR_ID" ColumnName="COMMUNITY_DOCTOR_ID" />
+          <ScalarProperty Name="COMMUNITY_DOCTOR_CITY" ColumnName="COMMUNITY_DOCTOR_CITY" />
+          <ScalarProperty Name="COMMUNITY_DOCTOR_HOSPITAL" ColumnName="COMMUNITY_DOCTOR_HOSPITAL" />
+          <ScalarProperty Name="COMMUNITY_DOCTOR_DEPARTMENT" ColumnName="COMMUNITY_DOCTOR_DEPARTMENT" />
+          <ScalarProperty Name="COMMUNITY_EMAIL" ColumnName="COMMUNITY_EMAIL" />
+          <ScalarProperty Name="COMMUNITY_PHONE" ColumnName="COMMUNITY_PHONE" />
+          <ScalarProperty Name="COMMUNITY_PASSWORD" ColumnName="COMMUNITY_PASSWORD" />
+          <ScalarProperty Name="COMMUNITY_NAME" ColumnName="COMMUNITY_NAME" />
+          <ScalarProperty Name="COMMUNITY_STATUS" ColumnName="COMMUNITY_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISCUSSION">
+      <EntityTypeMapping TypeName="Model.DISCUSSION">
+        <MappingFragment StoreEntitySet="DISCUSSION">
+          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COMMENT_CONTENT" ColumnName="COMMENT_CONTENT" />
+          <ScalarProperty Name="AUDIT_STATUS" ColumnName="AUDIT_STATUS" />
+          <ScalarProperty Name="COMMENT_TIME" ColumnName="COMMENT_TIME" />
+          <ScalarProperty Name="LIKES_NUMBER" ColumnName="LIKES_NUMBER" />
+          <ScalarProperty Name="COMMENT_STATUS" ColumnName="COMMENT_STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRUG">
+      <EntityTypeMapping TypeName="Model.DRUG">
+        <MappingFragment StoreEntitySet="DRUG">
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="DRUG_NAME" ColumnName="DRUG_NAME" />
+          <ScalarProperty Name="DRUG_DOSAGE_FORM" ColumnName="DRUG_DOSAGE_FORM" />
+          <ScalarProperty Name="DRUG_USAGE" ColumnName="DRUG_USAGE" />
+          <ScalarProperty Name="DRUG_CONTRAINDICATIONS" ColumnName="DRUG_CONTRAINDICATIONS" />
+          <ScalarProperty Name="DRUG_EFFECTS" ColumnName="DRUG_EFFECTS" />
+          <ScalarProperty Name="MANUFACTURER" ColumnName="MANUFACTURER" />
+          <ScalarProperty Name="PRESCRIPTION" ColumnName="PRESCRIPTION" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="MIN_INVENTORY_QUANTITY" ColumnName="MIN_INVENTORY_QUANTITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRUG_LOG">
+      <EntityTypeMapping TypeName="Model.DRUG_LOG">
+        <MappingFragment StoreEntitySet="DRUG_LOG">
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="DOSAGE" ColumnName="DOSAGE" />
+          <ScalarProperty Name="DOSAGE_FREQUENCY" ColumnName="DOSAGE_FREQUENCY" />
+          <ScalarProperty Name="DOSAGE_METHOD" ColumnName="DOSAGE_METHOD" />
+          <ScalarProperty Name="DOSAGE_DURATION" ColumnName="DOSAGE_DURATION" />
+          <ScalarProperty Name="DOCTOR_ID" ColumnName="DOCTOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRUG_STORE">
+      <EntityTypeMapping TypeName="Model.DRUG_STORE">
+        <MappingFragment StoreEntitySet="DRUG_STORE">
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="MANUFACTURE_DATE" ColumnName="MANUFACTURE_DATE" />
+          <ScalarProperty Name="EXPIRY_DATE" ColumnName="EXPIRY_DATE" />
+          <ScalarProperty Name="INVENTORY_QUANTITY" ColumnName="INVENTORY_QUANTITY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRUGDIRECTORY">
+      <EntityTypeMapping TypeName="Model.DRUGDIRECTORY">
+        <MappingFragment StoreEntitySet="DRUGDIRECTORY">
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ADD_TIME" ColumnName="ADD_TIME" />
+          <ScalarProperty Name="PURCHASE_TIME" ColumnName="PURCHASE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELDERLY_EMERGENCY_CONTECT">
+      <EntityTypeMapping TypeName="Model.ELDERLY_EMERGENCY_CONTECT">
+        <MappingFragment StoreEntitySet="ELDERLY_EMERGENCY_CONTECT">
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ELDERLY_EMERGENCY_NAME" ColumnName="ELDERLY_EMERGENCY_NAME" />
+          <ScalarProperty Name="ELDERLY_EMERGENCY_PHONE" ColumnName="ELDERLY_EMERGENCY_PHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVENT">
+      <EntityTypeMapping TypeName="Model.EVENT">
+        <MappingFragment StoreEntitySet="EVENT">
+          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+          <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
+          <ScalarProperty Name="EVENT_TYPE" ColumnName="EVENT_TYPE" />
+          <ScalarProperty Name="EVENT_CONTENT" ColumnName="EVENT_CONTENT" />
+          <ScalarProperty Name="EVENT_SITE" ColumnName="EVENT_SITE" />
+          <ScalarProperty Name="EVENT_DATE" ColumnName="EVENT_DATE" />
+          <ScalarProperty Name="EA_ID" ColumnName="EA_ID" />
+          <ScalarProperty Name="EVENT_START_TIME" ColumnName="EVENT_START_TIME" />
+          <ScalarProperty Name="EVENT_END_TIME" ColumnName="EVENT_END_TIME" />
+          <ScalarProperty Name="STAR_NUMBER" ColumnName="STAR_NUMBER" />
+          <ScalarProperty Name="PARTICIPANT_NUMBER" ColumnName="PARTICIPANT_NUMBER" />
+          <ScalarProperty Name="INITIATOR_ID" ColumnName="INITIATOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVENTCHECK">
+      <EntityTypeMapping TypeName="Model.EVENTCHECK">
+        <MappingFragment StoreEntitySet="EVENTCHECK">
+          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+          <ScalarProperty Name="ADMINISTRATOR_ID" ColumnName="ADMINISTRATOR_ID" />
+          <ScalarProperty Name="SUMMIT_DATE" ColumnName="SUMMIT_DATE" />
+          <ScalarProperty Name="REVIEW_DATE" ColumnName="REVIEW_DATE" />
+          <ScalarProperty Name="REVIEW_RESULT" ColumnName="REVIEW_RESULT" />
+          <ScalarProperty Name="REVIEW_ADVICE" ColumnName="REVIEW_ADVICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JOIN_ACTIVITY">
+      <EntityTypeMapping TypeName="Model.JOIN_ACTIVITY">
+        <MappingFragment StoreEntitySet="JOIN_ACTIVITY">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="PARTICIPATION_TIME" ColumnName="PARTICIPATION_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICAL_HISTORY">
+      <EntityTypeMapping TypeName="Model.MEDICAL_HISTORY">
+        <MappingFragment StoreEntitySet="MEDICAL_HISTORY">
+          <ScalarProperty Name="MEDICAL_HISTORY_ID" ColumnName="MEDICAL_HISTORY_ID" />
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ILLNESS_DATE" ColumnName="ILLNESS_DATE" />
+          <ScalarProperty Name="RECOVERY_DATE" ColumnName="RECOVERY_DATE" />
+          <ScalarProperty Name="CHECK_RESULT" ColumnName="CHECK_RESULT" />
+          <ScalarProperty Name="DISEASE_CATEGORY" ColumnName="DISEASE_CATEGORY" />
+          <ScalarProperty Name="HOSPITAL_NAME" ColumnName="HOSPITAL_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHARMACY_ADMIN">
+      <EntityTypeMapping TypeName="Model.PHARMACY_ADMIN">
+        <MappingFragment StoreEntitySet="PHARMACY_ADMIN">
+          <ScalarProperty Name="PA_ID" ColumnName="PA_ID" />
+          <ScalarProperty Name="PA_CERTIFICATE" ColumnName="PA_CERTIFICATE" />
+          <ScalarProperty Name="PA_EMAIL" ColumnName="PA_EMAIL" />
+          <ScalarProperty Name="PA_PHONE" ColumnName="PA_PHONE" />
+          <ScalarProperty Name="PA_PASSWORD" ColumnName="PA_PASSWORD" />
+          <ScalarProperty Name="PA_NAME" ColumnName="PA_NAME" />
+          <ScalarProperty Name="PA_PROFILE" ColumnName="PA_PROFILE" />
+          <ScalarProperty Name="PA_GENDER" ColumnName="PA_GENDER" />
+          <ScalarProperty Name="PA_CREATETIME" ColumnName="PA_CREATETIME" />
+          <ScalarProperty Name="PA_EXPERIENCE" ColumnName="PA_EXPERIENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUBLICATION_DISCUSSION">
+      <EntityTypeMapping TypeName="Model.PUBLICATION_DISCUSSION">
+        <MappingFragment StoreEntitySet="PUBLICATION_DISCUSSION">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PURCHASE">
+      <EntityTypeMapping TypeName="Model.PURCHASE">
+        <MappingFragment StoreEntitySet="PURCHASE">
+          <ScalarProperty Name="PA_ID" ColumnName="PA_ID" />
+          <ScalarProperty Name="DRUG_ID" ColumnName="DRUG_ID" />
+          <ScalarProperty Name="MANUFACTURE_DATE" ColumnName="MANUFACTURE_DATE" />
+          <ScalarProperty Name="PURCHASE_TIME" ColumnName="PURCHASE_TIME" />
+          <ScalarProperty Name="PURCHASE_TYPE" ColumnName="PURCHASE_TYPE" />
+          <ScalarProperty Name="PURCHASE_NUM" ColumnName="PURCHASE_NUM" />
+          <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REPLYCOMMENT">
+      <EntityTypeMapping TypeName="Model.REPLYCOMMENT">
+        <MappingFragment StoreEntitySet="REPLYCOMMENT">
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THEELDERLY">
+      <EntityTypeMapping TypeName="Model.THEELDERLY">
+        <MappingFragment StoreEntitySet="THEELDERLY">
+          <ScalarProperty Name="ELDERLY_ID" ColumnName="ELDERLY_ID" />
+          <ScalarProperty Name="ELDERLY_ADDRESS" ColumnName="ELDERLY_ADDRESS" />
+          <ScalarProperty Name="ELDERLY_PASSWORD" ColumnName="ELDERLY_PASSWORD" />
+          <ScalarProperty Name="ELDERLY_PHONE" ColumnName="ELDERLY_PHONE" />
+          <ScalarProperty Name="ELDERLY_NAME" ColumnName="ELDERLY_NAME" />
+          <ScalarProperty Name="ELDERLY_PROFILE" ColumnName="ELDERLY_PROFILE" />
+          <ScalarProperty Name="ELDERLY_BIRTHDAY" ColumnName="ELDERLY_BIRTHDAY" />
+          <ScalarProperty Name="ELDERLY_STATUS" ColumnName="ELDERLY_STATUS" />
+          <ScalarProperty Name="ELDERLY_GENDER" ColumnName="ELDERLY_GENDER" />
+          <ScalarProperty Name="ELDERLY_CREATE_TIME" ColumnName="ELDERLY_CREATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THUMBSUP_ACTIVITY">
+      <EntityTypeMapping TypeName="Model.THUMBSUP_ACTIVITY">
+        <MappingFragment StoreEntitySet="THUMBSUP_ACTIVITY">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
+          <ScalarProperty Name="THUMBSUP_TIME" ColumnName="THUMBSUP_TIME" />
+          <ScalarProperty Name="THUMBSUP_NUMBER" ColumnName="THUMBSUP_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

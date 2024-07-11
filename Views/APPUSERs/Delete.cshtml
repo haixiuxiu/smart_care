@@ -1,0 +1,104 @@
+﻿@model WebApplication1.Models.APPUSER
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>APPUSER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_PROFILE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_PROFILE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_CREATETIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_CREATETIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_BIRTHDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_BIRTHDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_GENDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_GENDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARETAKER.CARETAKER_PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARETAKER.CARETAKER_PHONE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

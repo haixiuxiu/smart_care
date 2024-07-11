@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebApplication1.Models.APPUSER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PHONE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PROFILE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CREATETIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_BIRTHDAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_GENDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARETAKER.CARETAKER_PHONE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PHONE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PROFILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CREATETIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_BIRTHDAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_GENDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARETAKER.CARETAKER_PHONE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_ID })
+        </td>
+    </tr>
+}
+
+</table>
