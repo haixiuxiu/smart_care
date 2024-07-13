@@ -20,7 +20,6 @@ namespace WebApplication1.Models
             this.COLLECTION_ACTIVITY = new HashSet<COLLECTION_ACTIVITY>();
             this.COMMENTTHUMBSUP = new HashSet<COMMENTTHUMBSUP>();
             this.JOIN_ACTIVITY = new HashSet<JOIN_ACTIVITY>();
-            this.REPLYCOMMENT = new HashSet<REPLYCOMMENT>();
             this.THUMBSUP_ACTIVITY = new HashSet<THUMBSUP_ACTIVITY>();
         }
     
@@ -45,8 +44,6 @@ namespace WebApplication1.Models
         public virtual EVENTCHECK EVENTCHECK { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JOIN_ACTIVITY> JOIN_ACTIVITY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<REPLYCOMMENT> REPLYCOMMENT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
     }

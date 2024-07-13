@@ -21,6 +21,20 @@
                     console.error('Error fetching activities:', error);
                     this.errorMessage = '无法获取活动数据。';
                 });
+        },
+        handleApproval(activityId) {
+            const activityIndex = this.activities.findIndex(a => a.EVENT_ID === activityId);
+            if (activityIndex !== -1) {
+                // 从activities数组中移除已审核的活动
+                this.activities.splice(activityIndex, 1);
+            }
+        },
+        handleRejection(activityId) {
+            const activityIndex = this.activities.findIndex(a => a.EVENT_ID === activityId);
+            if (activityIndex !== -1) {
+                // 从activities数组中移除已驳回的活动
+                this.activities.splice(activityIndex, 1);
+            }
         }
     }
 });

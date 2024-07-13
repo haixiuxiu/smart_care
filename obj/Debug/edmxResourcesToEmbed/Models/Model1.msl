@@ -192,25 +192,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EVENT">
-      <EntityTypeMapping TypeName="Model.EVENT">
-        <MappingFragment StoreEntitySet="EVENT">
-          <ScalarProperty Name="EVENT_STATE" ColumnName="EVENT_STATE" />
-          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
-          <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
-          <ScalarProperty Name="EVENT_TYPE" ColumnName="EVENT_TYPE" />
-          <ScalarProperty Name="EVENT_CONTENT" ColumnName="EVENT_CONTENT" />
-          <ScalarProperty Name="EVENT_SITE" ColumnName="EVENT_SITE" />
-          <ScalarProperty Name="EVENT_DATE" ColumnName="EVENT_DATE" />
-          <ScalarProperty Name="EA_ID" ColumnName="EA_ID" />
-          <ScalarProperty Name="EVENT_START_TIME" ColumnName="EVENT_START_TIME" />
-          <ScalarProperty Name="EVENT_END_TIME" ColumnName="EVENT_END_TIME" />
-          <ScalarProperty Name="STAR_NUMBER" ColumnName="STAR_NUMBER" />
-          <ScalarProperty Name="PARTICIPANT_NUMBER" ColumnName="PARTICIPANT_NUMBER" />
-          <ScalarProperty Name="INITIATOR_ID" ColumnName="INITIATOR_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="EVENTCHECK">
       <EntityTypeMapping TypeName="Model.EVENTCHECK">
         <MappingFragment StoreEntitySet="EVENTCHECK">
@@ -271,14 +252,6 @@
           <ScalarProperty Name="PURCHASE_TYPE" ColumnName="PURCHASE_TYPE" />
           <ScalarProperty Name="PURCHASE_NUM" ColumnName="PURCHASE_NUM" />
           <ScalarProperty Name="PURCHASE_PRICE" ColumnName="PURCHASE_PRICE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="REPLYCOMMENT">
-      <EntityTypeMapping TypeName="Model.REPLYCOMMENT">
-        <MappingFragment StoreEntitySet="REPLYCOMMENT">
-          <ScalarProperty Name="ACTIVITY_ID" ColumnName="ACTIVITY_ID" />
-          <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -362,9 +335,29 @@
         <ScalarProperty Name="SUPERVISOR_ID" ColumnName="SUPERVISOR_ID" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="EVENT">
+      <EntityTypeMapping TypeName="Model.EVENT">
+        <MappingFragment StoreEntitySet="EVENT">
+          <ScalarProperty Name="EVENT_STATE" ColumnName="EVENT_STATE" />
+          <ScalarProperty Name="INITIATOR_ID" ColumnName="INITIATOR_ID" />
+          <ScalarProperty Name="PARTICIPANT_NUMBER" ColumnName="PARTICIPANT_NUMBER" />
+          <ScalarProperty Name="STAR_NUMBER" ColumnName="STAR_NUMBER" />
+          <ScalarProperty Name="EVENT_END_TIME" ColumnName="EVENT_END_TIME" />
+          <ScalarProperty Name="EVENT_START_TIME" ColumnName="EVENT_START_TIME" />
+          <ScalarProperty Name="EA_ID" ColumnName="EA_ID" />
+          <ScalarProperty Name="EVENT_DATE" ColumnName="EVENT_DATE" />
+          <ScalarProperty Name="EVENT_SITE" ColumnName="EVENT_SITE" />
+          <ScalarProperty Name="EVENT_CONTENT" ColumnName="EVENT_CONTENT" />
+          <ScalarProperty Name="EVENT_TYPE" ColumnName="EVENT_TYPE" />
+          <ScalarProperty Name="EVENT_NAME" ColumnName="EVENT_NAME" />
+          <ScalarProperty Name="EVENT_ID" ColumnName="EVENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DISCUSSION">
       <EntityTypeMapping TypeName="Model.DISCUSSION">
         <MappingFragment StoreEntitySet="DISCUSSION">
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
           <ScalarProperty Name="LIKES_NUMBER" ColumnName="LIKES_NUMBER" />
           <ScalarProperty Name="COMMENT_TIME" ColumnName="COMMENT_TIME" />
           <ScalarProperty Name="COMMENT_CONTENT" ColumnName="COMMENT_CONTENT" />

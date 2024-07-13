@@ -39,18 +39,17 @@ namespace WebApplication1.Models
         public virtual DbSet<DRUG_STORE> DRUG_STORE { get; set; }
         public virtual DbSet<DRUGDIRECTORY> DRUGDIRECTORY { get; set; }
         public virtual DbSet<ELDERLY_EMERGENCY_CONTECT> ELDERLY_EMERGENCY_CONTECT { get; set; }
-        public virtual DbSet<EVENT> EVENT { get; set; }
         public virtual DbSet<EVENTCHECK> EVENTCHECK { get; set; }
         public virtual DbSet<JOIN_ACTIVITY> JOIN_ACTIVITY { get; set; }
         public virtual DbSet<MEDICAL_HISTORY> MEDICAL_HISTORY { get; set; }
         public virtual DbSet<PHARMACY_ADMIN> PHARMACY_ADMIN { get; set; }
         public virtual DbSet<PURCHASE> PURCHASE { get; set; }
-        public virtual DbSet<REPLYCOMMENT> REPLYCOMMENT { get; set; }
         public virtual DbSet<THEELDERLY> THEELDERLY { get; set; }
         public virtual DbSet<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
         public virtual DbSet<CARE> CARE { get; set; }
         public virtual DbSet<ORDERED> ORDERED { get; set; }
         public virtual DbSet<SUPERVISOR> SUPERVISOR { get; set; }
+        public virtual DbSet<EVENT> EVENT { get; set; }
         public virtual DbSet<DISCUSSION> DISCUSSION { get; set; }
     }
 }

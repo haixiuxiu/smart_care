@@ -58,19 +58,7 @@
                             <div v-else-if="!activities.length" class="alert alert-info">没有待审核的活动。</div>
                             <div class="row">
                                 <div v-for="activity in activities" :key="activity.EVENT_ID" class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            {{ activity.EVENT_NAME }}
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">ID: {{ activity.EVENT_ID }}</h5>
-                                            <p class="card-text">时间: {{ activity.EVENT_DATE }}</p>
-                                            <a :href="`/ActivityAudit/Approve/${activity.EVENT_ID}`" class="btn btn-success btn-sm">审核通过</a>
-                                            <a :href="`/ActivityDetail/index/${activity.EVENT_ID}`" class="btn btn-info btn-sm">详情</a>
-
-                                            <a :href="`/ActivityAudit/Delete/${activity.EVENT_ID}`" class="btn btn-danger btn-sm">驳回</a>
-                                        </div>
-                                    </div>
+                                    <activity-card :activity="activity" v-on:approved="handleApproval" v-on:rejected="handleRejection" ></activity-card>
                                 </div>
                             </div>
                             <nav aria-label="Page navigation example">
@@ -104,8 +92,11 @@
     </div>
 </div>
 
-
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="~/Scripts/ActivityCard.js"></script>
 <script src="~/Scripts/activity-list.js"></script>
-<script src="~/Scripts/custom.js"></script>
+
+

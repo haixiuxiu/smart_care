@@ -122,9 +122,9 @@
     <Property Name="COLLECTION_STATE" Type="Byte" Nullable="false" />
     <NavigationProperty Name="ADMINISTER" Relationship="Self.COLLECTION_ACTIVITY_FK1" FromRole="COLLECTION_ACTIVITY" ToRole="ADMINISTER" />
     <NavigationProperty Name="CARETAKER" Relationship="Self.COLLECTION_ACTIVITY_FK4" FromRole="COLLECTION_ACTIVITY" ToRole="CARETAKER" />
-    <NavigationProperty Name="EVENT" Relationship="Self.COLLECTION_ACTIVITY_FK2" FromRole="COLLECTION_ACTIVITY" ToRole="EVENT" />
     <NavigationProperty Name="THEELDERLY" Relationship="Self.COLLECTION_ACTIVITY_FK3" FromRole="COLLECTION_ACTIVITY" ToRole="THEELDERLY" />
     <NavigationProperty Name="COMMUNITY_DOCTOR" Relationship="Self.COLLECTION_ACTIVITY_FK5" FromRole="COLLECTION_ACTIVITY" ToRole="COMMUNITY_DOCTOR" />
+    <NavigationProperty Name="EVENT" Relationship="Model.COLLECTION_ACTIVITY_FK2" FromRole="COLLECTION_ACTIVITY" ToRole="EVENT" />
   </EntityType>
   <EntityType Name="COMMENTTHUMBSUP">
     <Key>
@@ -139,11 +139,11 @@
     <Property Name="COMMENTSTAR_NUMBER" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CARETAKER" Relationship="Self.COMMENTTHUMBSUP_FK1" FromRole="COMMENTTHUMBSUP" ToRole="CARETAKER" />
     <NavigationProperty Name="CARETAKER1" Relationship="Self.COMMENTTHUMBSUP_FK4" FromRole="COMMENTTHUMBSUP" ToRole="CARETAKER" />
-    <NavigationProperty Name="EVENT" Relationship="Self.COMMENTTHUMBSUP_FK2" FromRole="COMMENTTHUMBSUP" ToRole="EVENT" />
     <NavigationProperty Name="COMMUNITY_DOCTOR" Relationship="Self.COMMENTTHUMBSUP_FK5" FromRole="COMMENTTHUMBSUP" ToRole="COMMUNITY_DOCTOR" />
     <NavigationProperty Name="THEELDERLY" Relationship="Self.COMMENTTHUMBSUP_FK6" FromRole="COMMENTTHUMBSUP" ToRole="THEELDERLY" />
     <NavigationProperty Name="COMMUNITY_DOCTOR1" Relationship="Self.COMMENTTHUMBSUP_FK7" FromRole="COMMENTTHUMBSUP" ToRole="COMMUNITY_DOCTOR" />
     <NavigationProperty Name="THEELDERLY1" Relationship="Self.COMMENTTHUMBSUP_FK8" FromRole="COMMENTTHUMBSUP" ToRole="THEELDERLY" />
+    <NavigationProperty Name="EVENT" Relationship="Model.COMMENTTHUMBSUP_FK2" FromRole="COMMENTTHUMBSUP" ToRole="EVENT" />
     <NavigationProperty Name="DISCUSSION" Relationship="Model.COMMENTTHUMBSUP_FK3" FromRole="COMMENTTHUMBSUP" ToRole="DISCUSSION" />
   </EntityType>
   <EntityType Name="COMMUNITY_DOCTOR">
@@ -166,6 +166,7 @@
     <NavigationProperty Name="JOIN_ACTIVITY" Relationship="Self.JOIN_ACTIVITY_FK3" FromRole="COMMUNITY_DOCTOR" ToRole="JOIN_ACTIVITY" />
     <NavigationProperty Name="THUMBSUP_ACTIVITY" Relationship="Self.THUMBSUP_ACTIVITY_FK3" FromRole="COMMUNITY_DOCTOR" ToRole="THUMBSUP_ACTIVITY" />
     <NavigationProperty Name="ADVICE" Relationship="Model.ADVICE_FK11" FromRole="COMMUNITY_DOCTOR" ToRole="ADVICE" />
+    <NavigationProperty Name="DRUG_LOG" Relationship="Model.DRUG_LOG_FK31" FromRole="COMMUNITY_DOCTOR" ToRole="DRUG_LOG" />
   </EntityType>
   <EntityType Name="DRUG">
     <Key>
@@ -205,6 +206,8 @@
     <NavigationProperty Name="APPUSER" Relationship="Self.DRUG_LOG_FK1" FromRole="DRUG_LOG" ToRole="APPUSER" />
     <NavigationProperty Name="APPUSER1" Relationship="Self.DRUG_LOG_FK3" FromRole="DRUG_LOG" ToRole="APPUSER" />
     <NavigationProperty Name="DRUG" Relationship="Self.DRUG_LOG_FK2" FromRole="DRUG_LOG" ToRole="DRUG" />
+    <NavigationProperty Name="COMMUNITY_DOCTOR" Relationship="Model.DRUG_LOG_FK31" FromRole="DRUG_LOG" ToRole="COMMUNITY_DOCTOR" />
+    <NavigationProperty Name="THEELDERLY" Relationship="Model.DRUG_LOG_FK11" FromRole="DRUG_LOG" ToRole="THEELDERLY" />
   </EntityType>
   <EntityType Name="DRUG_STORE">
     <Key>
@@ -240,30 +243,6 @@
     <Property Name="ELDERLY_EMERGENCY_PHONE" Type="Int64" Nullable="false" />
     <NavigationProperty Name="THEELDERLY" Relationship="Model.ELDERLY_EMERGENCY_CONTECT_FK1" FromRole="ELDERLY_EMERGENCY_CONTECT" ToRole="THEELDERLY" />
   </EntityType>
-  <EntityType Name="EVENT">
-    <Key>
-      <PropertyRef Name="EVENT_ID" />
-    </Key>
-    <Property Name="EVENT_ID" Type="Int32" Nullable="false" />
-    <Property Name="EVENT_NAME" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EVENT_TYPE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="EVENT_CONTENT" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EVENT_SITE" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EVENT_DATE" Type="DateTime" Nullable="false" />
-    <Property Name="EA_ID" Type="Int32" Nullable="false" />
-    <Property Name="EVENT_START_TIME" Type="DateTime" Precision="6" Nullable="false" />
-    <Property Name="EVENT_END_TIME" Type="DateTime" Precision="6" Nullable="false" />
-    <Property Name="STAR_NUMBER" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="PARTICIPANT_NUMBER" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="INITIATOR_ID" Type="Int64" Nullable="false" />
-    <NavigationProperty Name="COLLECTION_ACTIVITY" Relationship="Self.COLLECTION_ACTIVITY_FK2" FromRole="EVENT" ToRole="COLLECTION_ACTIVITY" />
-    <NavigationProperty Name="COMMENTTHUMBSUP" Relationship="Self.COMMENTTHUMBSUP_FK2" FromRole="EVENT" ToRole="COMMENTTHUMBSUP" />
-    <NavigationProperty Name="EVENTCHECK" Relationship="Self.EVENTCHECK_FK1" FromRole="EVENT" ToRole="EVENTCHECK" />
-    <NavigationProperty Name="JOIN_ACTIVITY" Relationship="Self.JOIN_ACTIVITY_FK2" FromRole="EVENT" ToRole="JOIN_ACTIVITY" />
-    <NavigationProperty Name="REPLYCOMMENT" Relationship="Self.REPLYCOMMENT_FK2" FromRole="EVENT" ToRole="REPLYCOMMENT" />
-    <NavigationProperty Name="THUMBSUP_ACTIVITY" Relationship="Self.THUMBSUP_ACTIVITY_FK2" FromRole="EVENT" ToRole="THUMBSUP_ACTIVITY" />
-    <Property Name="EVENT_STATE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="EVENTCHECK">
     <Key>
       <PropertyRef Name="EVENT_ID" />
@@ -275,7 +254,7 @@
     <Property Name="REVIEW_RESULT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="REVIEW_ADVICE" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ADMINISTER" Relationship="Self.EVENTCHECK_FK2" FromRole="EVENTCHECK" ToRole="ADMINISTER" />
-    <NavigationProperty Name="EVENT" Relationship="Self.EVENTCHECK_FK1" FromRole="EVENTCHECK" ToRole="EVENT" />
+    <NavigationProperty Name="EVENT" Relationship="Model.EVENTCHECK_FK1" FromRole="EVENTCHECK" ToRole="EVENT" />
   </EntityType>
   <EntityType Name="JOIN_ACTIVITY">
     <Key>
@@ -287,8 +266,8 @@
     <Property Name="PARTICIPATION_TIME" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="CARETAKER" Relationship="Self.JOIN_ACTIVITY_FK1" FromRole="JOIN_ACTIVITY" ToRole="CARETAKER" />
     <NavigationProperty Name="COMMUNITY_DOCTOR" Relationship="Self.JOIN_ACTIVITY_FK3" FromRole="JOIN_ACTIVITY" ToRole="COMMUNITY_DOCTOR" />
-    <NavigationProperty Name="EVENT" Relationship="Self.JOIN_ACTIVITY_FK2" FromRole="JOIN_ACTIVITY" ToRole="EVENT" />
     <NavigationProperty Name="THEELDERLY" Relationship="Self.JOIN_ACTIVITY_FK4" FromRole="JOIN_ACTIVITY" ToRole="THEELDERLY" />
+    <NavigationProperty Name="EVENT" Relationship="Model.JOIN_ACTIVITY_FK2" FromRole="JOIN_ACTIVITY" ToRole="EVENT" />
   </EntityType>
   <EntityType Name="MEDICAL_HISTORY">
     <Key>
@@ -338,15 +317,6 @@
     <NavigationProperty Name="DRUG_STORE" Relationship="Self.PURCHASE_FK3" FromRole="PURCHASE" ToRole="DRUG_STORE" />
     <NavigationProperty Name="PHARMACY_ADMIN" Relationship="Self.PURCHASE_FK1" FromRole="PURCHASE" ToRole="PHARMACY_ADMIN" />
   </EntityType>
-  <EntityType Name="REPLYCOMMENT">
-    <Key>
-      <PropertyRef Name="ACTIVITY_ID" />
-      <PropertyRef Name="COMMENT_ID" />
-    </Key>
-    <Property Name="ACTIVITY_ID" Type="Int32" Nullable="false" />
-    <Property Name="COMMENT_ID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="EVENT" Relationship="Self.REPLYCOMMENT_FK2" FromRole="REPLYCOMMENT" ToRole="EVENT" />
-  </EntityType>
   <EntityType Name="THEELDERLY">
     <Key>
       <PropertyRef Name="ELDERLY_ID" />
@@ -375,6 +345,7 @@
     <NavigationProperty Name="CARE" Relationship="Model.CARE_FK2" FromRole="THEELDERLY" ToRole="CARE" />
     <NavigationProperty Name="ORDERED" Relationship="Model.ORDERED_FK2" FromRole="THEELDERLY" ToRole="ORDERED" />
     <NavigationProperty Name="SUPERVISOR" Relationship="Model.SUPERVISOR_ELDERLY" FromRole="THEELDERLY" ToRole="SUPERVISOR" />
+    <NavigationProperty Name="DRUG_LOG" Relationship="Model.DRUG_LOG_FK11" FromRole="THEELDERLY" ToRole="DRUG_LOG" />
   </EntityType>
   <EntityType Name="THUMBSUP_ACTIVITY">
     <Key>
@@ -387,8 +358,8 @@
     <Property Name="THUMBSUP_NUMBER" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CARETAKER" Relationship="Self.THUMBSUP_ACTIVITY_FK1" FromRole="THUMBSUP_ACTIVITY" ToRole="CARETAKER" />
     <NavigationProperty Name="COMMUNITY_DOCTOR" Relationship="Self.THUMBSUP_ACTIVITY_FK3" FromRole="THUMBSUP_ACTIVITY" ToRole="COMMUNITY_DOCTOR" />
-    <NavigationProperty Name="EVENT" Relationship="Self.THUMBSUP_ACTIVITY_FK2" FromRole="THUMBSUP_ACTIVITY" ToRole="EVENT" />
     <NavigationProperty Name="THEELDERLY" Relationship="Self.THUMBSUP_ACTIVITY_FK4" FromRole="THUMBSUP_ACTIVITY" ToRole="THEELDERLY" />
+    <NavigationProperty Name="EVENT" Relationship="Model.THUMBSUP_ACTIVITY_FK2" FromRole="THUMBSUP_ACTIVITY" ToRole="EVENT" />
   </EntityType>
   <Association Name="COLLECTION_ACTIVITY_FK1">
     <End Role="ADMINISTER" Type="Self.ADMINISTER" Multiplicity="1" />
@@ -570,18 +541,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="COLLECTION_ACTIVITY_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="COLLECTION_ACTIVITY" Type="Self.COLLECTION_ACTIVITY" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="COLLECTION_ACTIVITY">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="COLLECTION_ACTIVITY_FK3">
     <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
     <End Role="COLLECTION_ACTIVITY" Type="Self.COLLECTION_ACTIVITY" Multiplicity="*" />
@@ -603,18 +562,6 @@
       </Principal>
       <Dependent Role="COLLECTION_ACTIVITY">
         <PropertyRef Name="USER_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="COMMENTTHUMBSUP_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="COMMENTTHUMBSUP" Type="Self.COMMENTTHUMBSUP" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="COMMENTTHUMBSUP">
-        <PropertyRef Name="ACTIVITY_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -764,54 +711,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="EVENTCHECK_FK1">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="EVENTCHECK" Type="Self.EVENTCHECK" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="EVENTCHECK">
-        <PropertyRef Name="EVENT_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="JOIN_ACTIVITY_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="JOIN_ACTIVITY" Type="Self.JOIN_ACTIVITY" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="JOIN_ACTIVITY">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="REPLYCOMMENT_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="REPLYCOMMENT" Type="Self.REPLYCOMMENT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="REPLYCOMMENT">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="THUMBSUP_ACTIVITY_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="THUMBSUP_ACTIVITY" Type="Self.THUMBSUP_ACTIVITY" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="THUMBSUP_ACTIVITY">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="JOIN_ACTIVITY_FK4">
     <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
     <End Role="JOIN_ACTIVITY" Type="Self.JOIN_ACTIVITY" Multiplicity="*" />
@@ -875,13 +774,11 @@
     <EntitySet Name="DRUG_STORE" EntityType="Self.DRUG_STORE" />
     <EntitySet Name="DRUGDIRECTORY" EntityType="Self.DRUGDIRECTORY" />
     <EntitySet Name="ELDERLY_EMERGENCY_CONTECT" EntityType="Self.ELDERLY_EMERGENCY_CONTECT" />
-    <EntitySet Name="EVENT" EntityType="Self.EVENT" />
     <EntitySet Name="EVENTCHECK" EntityType="Self.EVENTCHECK" />
     <EntitySet Name="JOIN_ACTIVITY" EntityType="Self.JOIN_ACTIVITY" />
     <EntitySet Name="MEDICAL_HISTORY" EntityType="Self.MEDICAL_HISTORY" />
     <EntitySet Name="PHARMACY_ADMIN" EntityType="Self.PHARMACY_ADMIN" />
     <EntitySet Name="PURCHASE" EntityType="Self.PURCHASE" />
-    <EntitySet Name="REPLYCOMMENT" EntityType="Self.REPLYCOMMENT" />
     <EntitySet Name="THEELDERLY" EntityType="Self.THEELDERLY" />
     <EntitySet Name="THUMBSUP_ACTIVITY" EntityType="Self.THUMBSUP_ACTIVITY" />
     <AssociationSet Name="COLLECTION_ACTIVITY_FK1" Association="Self.COLLECTION_ACTIVITY_FK1">
@@ -944,10 +841,6 @@
       <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
       <End Role="CHECK_RECORD" EntitySet="CHECK_RECORD" />
     </AssociationSet>
-    <AssociationSet Name="COLLECTION_ACTIVITY_FK2" Association="Self.COLLECTION_ACTIVITY_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="COLLECTION_ACTIVITY" EntitySet="COLLECTION_ACTIVITY" />
-    </AssociationSet>
     <AssociationSet Name="COLLECTION_ACTIVITY_FK3" Association="Self.COLLECTION_ACTIVITY_FK3">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="COLLECTION_ACTIVITY" EntitySet="COLLECTION_ACTIVITY" />
@@ -955,10 +848,6 @@
     <AssociationSet Name="COLLECTION_ACTIVITY_FK5" Association="Self.COLLECTION_ACTIVITY_FK5">
       <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
       <End Role="COLLECTION_ACTIVITY" EntitySet="COLLECTION_ACTIVITY" />
-    </AssociationSet>
-    <AssociationSet Name="COMMENTTHUMBSUP_FK2" Association="Self.COMMENTTHUMBSUP_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="COMMENTTHUMBSUP" EntitySet="COMMENTTHUMBSUP" />
     </AssociationSet>
     <AssociationSet Name="COMMENTTHUMBSUP_FK5" Association="Self.COMMENTTHUMBSUP_FK5">
       <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
@@ -1007,22 +896,6 @@
     <AssociationSet Name="DRUGDIRECTORY_FK2" Association="Self.DRUGDIRECTORY_FK2">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="DRUGDIRECTORY" EntitySet="DRUGDIRECTORY" />
-    </AssociationSet>
-    <AssociationSet Name="EVENTCHECK_FK1" Association="Self.EVENTCHECK_FK1">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="EVENTCHECK" EntitySet="EVENTCHECK" />
-    </AssociationSet>
-    <AssociationSet Name="JOIN_ACTIVITY_FK2" Association="Self.JOIN_ACTIVITY_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="JOIN_ACTIVITY" EntitySet="JOIN_ACTIVITY" />
-    </AssociationSet>
-    <AssociationSet Name="REPLYCOMMENT_FK2" Association="Self.REPLYCOMMENT_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="REPLYCOMMENT" EntitySet="REPLYCOMMENT" />
-    </AssociationSet>
-    <AssociationSet Name="THUMBSUP_ACTIVITY_FK2" Association="Self.THUMBSUP_ACTIVITY_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="THUMBSUP_ACTIVITY" EntitySet="THUMBSUP_ACTIVITY" />
     </AssociationSet>
     <AssociationSet Name="JOIN_ACTIVITY_FK4" Association="Self.JOIN_ACTIVITY_FK4">
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
@@ -1074,6 +947,35 @@
     <AssociationSet Name="SUPERVISOR_ELDERLY" Association="Model.SUPERVISOR_ELDERLY">
       <End Role="SUPERVISOR" EntitySet="SUPERVISOR" />
       <End Role="THEELDERLY" EntitySet="THEELDERLY" />
+    </AssociationSet>
+    <AssociationSet Name="DRUG_LOG_FK31" Association="Model.DRUG_LOG_FK31">
+      <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
+      <End Role="DRUG_LOG" EntitySet="DRUG_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="DRUG_LOG_FK11" Association="Model.DRUG_LOG_FK11">
+      <End Role="THEELDERLY" EntitySet="THEELDERLY" />
+      <End Role="DRUG_LOG" EntitySet="DRUG_LOG" />
+    </AssociationSet>
+    <EntitySet Name="EVENT" EntityType="Model.EVENT" />
+    <AssociationSet Name="COLLECTION_ACTIVITY_FK2" Association="Model.COLLECTION_ACTIVITY_FK2">
+      <End Role="EVENT" EntitySet="EVENT" />
+      <End Role="COLLECTION_ACTIVITY" EntitySet="COLLECTION_ACTIVITY" />
+    </AssociationSet>
+    <AssociationSet Name="COMMENTTHUMBSUP_FK2" Association="Model.COMMENTTHUMBSUP_FK2">
+      <End Role="EVENT" EntitySet="EVENT" />
+      <End Role="COMMENTTHUMBSUP" EntitySet="COMMENTTHUMBSUP" />
+    </AssociationSet>
+    <AssociationSet Name="EVENTCHECK_FK1" Association="Model.EVENTCHECK_FK1">
+      <End Role="EVENT" EntitySet="EVENT" />
+      <End Role="EVENTCHECK" EntitySet="EVENTCHECK" />
+    </AssociationSet>
+    <AssociationSet Name="JOIN_ACTIVITY_FK2" Association="Model.JOIN_ACTIVITY_FK2">
+      <End Role="EVENT" EntitySet="EVENT" />
+      <End Role="JOIN_ACTIVITY" EntitySet="JOIN_ACTIVITY" />
+    </AssociationSet>
+    <AssociationSet Name="THUMBSUP_ACTIVITY_FK2" Association="Model.THUMBSUP_ACTIVITY_FK2">
+      <End Role="EVENT" EntitySet="EVENT" />
+      <End Role="THUMBSUP_ACTIVITY" EntitySet="THUMBSUP_ACTIVITY" />
     </AssociationSet>
     <EntitySet Name="DISCUSSION" EntityType="Model.DISCUSSION" />
     <AssociationSet Name="COMMENTTHUMBSUP_FK3" Association="Model.COMMENTTHUMBSUP_FK3">
@@ -1217,6 +1119,113 @@
     <End Type="Model.SUPERVISOR" Role="SUPERVISOR" Multiplicity="*" />
     <End Type="Model.THEELDERLY" Role="THEELDERLY" Multiplicity="*" />
   </Association>
+  <Association Name="DRUG_LOG_FK31">
+    <End Type="Model.COMMUNITY_DOCTOR" Role="COMMUNITY_DOCTOR" Multiplicity="1" />
+    <End Type="Model.DRUG_LOG" Role="DRUG_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMMUNITY_DOCTOR">
+        <PropertyRef Name="COMMUNITY_DOCTOR_ID" />
+      </Principal>
+      <Dependent Role="DRUG_LOG">
+        <PropertyRef Name="DOCTOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DRUG_LOG_FK11">
+    <End Type="Model.THEELDERLY" Role="THEELDERLY" Multiplicity="1" />
+    <End Type="Model.DRUG_LOG" Role="DRUG_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THEELDERLY">
+        <PropertyRef Name="ELDERLY_ID" />
+      </Principal>
+      <Dependent Role="DRUG_LOG">
+        <PropertyRef Name="ELDERLY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EVENT">
+    <Key>
+      <PropertyRef Name="EVENT_ID" />
+    </Key>
+    <Property Name="EVENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="EVENT_NAME" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="EVENT_TYPE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EVENT_CONTENT" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="EVENT_SITE" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="EVENT_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="EA_ID" Type="Int32" Nullable="false" />
+    <Property Name="EVENT_START_TIME" Type="DateTime" Nullable="false" Precision="6" />
+    <Property Name="EVENT_END_TIME" Type="DateTime" Nullable="false" Precision="6" />
+    <Property Name="STAR_NUMBER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PARTICIPANT_NUMBER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="INITIATOR_ID" Type="Int64" Nullable="false" />
+    <Property Name="EVENT_STATE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="COLLECTION_ACTIVITY" Relationship="Model.COLLECTION_ACTIVITY_FK2" FromRole="EVENT" ToRole="COLLECTION_ACTIVITY" />
+    <NavigationProperty Name="COMMENTTHUMBSUP" Relationship="Model.COMMENTTHUMBSUP_FK2" FromRole="EVENT" ToRole="COMMENTTHUMBSUP" />
+    <NavigationProperty Name="EVENTCHECK" Relationship="Model.EVENTCHECK_FK1" FromRole="EVENT" ToRole="EVENTCHECK" />
+    <NavigationProperty Name="JOIN_ACTIVITY" Relationship="Model.JOIN_ACTIVITY_FK2" FromRole="EVENT" ToRole="JOIN_ACTIVITY" />
+    <NavigationProperty Name="THUMBSUP_ACTIVITY" Relationship="Model.THUMBSUP_ACTIVITY_FK2" FromRole="EVENT" ToRole="THUMBSUP_ACTIVITY" />
+  </EntityType>
+  <Association Name="COLLECTION_ACTIVITY_FK2">
+    <End Type="Model.EVENT" Role="EVENT" Multiplicity="1" />
+    <End Type="Model.COLLECTION_ACTIVITY" Role="COLLECTION_ACTIVITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVENT">
+        <PropertyRef Name="EVENT_ID" />
+      </Principal>
+      <Dependent Role="COLLECTION_ACTIVITY">
+        <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="COMMENTTHUMBSUP_FK2">
+    <End Type="Model.EVENT" Role="EVENT" Multiplicity="1" />
+    <End Type="Model.COMMENTTHUMBSUP" Role="COMMENTTHUMBSUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVENT">
+        <PropertyRef Name="EVENT_ID" />
+      </Principal>
+      <Dependent Role="COMMENTTHUMBSUP">
+        <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EVENTCHECK_FK1">
+    <End Type="Model.EVENT" Role="EVENT" Multiplicity="1" />
+    <End Type="Model.EVENTCHECK" Role="EVENTCHECK" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EVENT">
+        <PropertyRef Name="EVENT_ID" />
+      </Principal>
+      <Dependent Role="EVENTCHECK">
+        <PropertyRef Name="EVENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JOIN_ACTIVITY_FK2">
+    <End Type="Model.EVENT" Role="EVENT" Multiplicity="1" />
+    <End Type="Model.JOIN_ACTIVITY" Role="JOIN_ACTIVITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVENT">
+        <PropertyRef Name="EVENT_ID" />
+      </Principal>
+      <Dependent Role="JOIN_ACTIVITY">
+        <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="THUMBSUP_ACTIVITY_FK2">
+    <End Type="Model.EVENT" Role="EVENT" Multiplicity="1" />
+    <End Type="Model.THUMBSUP_ACTIVITY" Role="THUMBSUP_ACTIVITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVENT">
+        <PropertyRef Name="EVENT_ID" />
+      </Principal>
+      <Dependent Role="THUMBSUP_ACTIVITY">
+        <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="DISCUSSION">
     <Key>
       <PropertyRef Name="COMMENT_ID" />
@@ -1229,6 +1238,7 @@
     <Property Name="COMMENT_CONTENT" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="COMMENT_TIME" Type="DateTime" Nullable="false" Precision="6" />
     <Property Name="LIKES_NUMBER" Type="Int32" Nullable="false" />
+    <Property Name="PARENT_ID" Type="Int32" />
     <NavigationProperty Name="COMMENTTHUMBSUP" Relationship="Model.COMMENTTHUMBSUP_FK3" FromRole="DISCUSSION" ToRole="COMMENTTHUMBSUP" />
   </EntityType>
   <Association Name="COMMENTTHUMBSUP_FK3">

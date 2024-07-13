@@ -29,7 +29,8 @@ namespace WebApplication1.Controllers
                     a.EVENT_ID,
                     a.EVENT_NAME,
                     EVENT_DATE = a.EVENT_DATE.ToString("yyyy-MM-dd HH:mm"),
-                    a.INITIATOR_ID
+                    a.INITIATOR_ID,
+                    a.EVENT_STATE
                 }).ToList();
 
                 return Json(new { activities = result }, JsonRequestBehavior.AllowGet);
@@ -39,8 +40,54 @@ namespace WebApplication1.Controllers
                 return Json(new { errorMessage = "无法访问数据库中的 EVENT 表!" + ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+        [HttpPost]
+        public JsonResult ApproveActivities(int eventId)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("Approving activity with ID: " + eventId); // 添加日志
+                var activity = db.EVENT.FirstOrDefault(a => a.EVENT_ID == eventId);
+                if (activity == null)
+                {
+                    return Json(new { success = false, message = "活动未找到" });
+                }
 
+                activity.EVENT_STATE = "审核通过";
+                db.SaveChanges();
 
+                System.Diagnostics.Debug.WriteLine("Successfully approved activity with ID: " + eventId); // 添加日志
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error approving activity: " + ex.Message); // 添加日志
+                return Json(new { success = false, message = "审核失败: " + ex.Message });
+            }
+        }
+        [HttpPost]
+        public JsonResult RejectActivity(int eventId)
+        {
+            try
+            {
+                //System.Diagnostics.Debug.WriteLine("Approving activity with ID: " + eventId); // 添加日志
+                var activity = db.EVENT.FirstOrDefault(a => a.EVENT_ID == eventId);
+                if (activity == null)
+                {
+                    return Json(new { success = false, message = "活动未找到" });
+                }
+
+                activity.EVENT_STATE = "驳回";
+                db.SaveChanges();
+
+                //System.Diagnostics.Debug.WriteLine("Successfully approved activity with ID: " + eventId); // 添加日志
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error rejecting activity: " + ex.Message); // 添加日志
+                return Json(new { success = false, message = "驳回失败: " + ex.Message });
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

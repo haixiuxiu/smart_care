@@ -24,6 +24,7 @@ namespace WebApplication1.Models
             this.JOIN_ACTIVITY = new HashSet<JOIN_ACTIVITY>();
             this.THUMBSUP_ACTIVITY = new HashSet<THUMBSUP_ACTIVITY>();
             this.ADVICE = new HashSet<ADVICE>();
+            this.DRUG_LOG = new HashSet<DRUG_LOG>();
         }
     
         public int COMMUNITY_DOCTOR_ID { get; set; }
@@ -50,5 +51,7 @@ namespace WebApplication1.Models
         public virtual ICollection<THUMBSUP_ACTIVITY> THUMBSUP_ACTIVITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ADVICE> ADVICE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DRUG_LOG> DRUG_LOG { get; set; }
     }
 }

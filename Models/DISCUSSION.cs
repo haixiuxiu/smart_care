@@ -20,6 +20,7 @@ namespace WebApplication1.Models
         public string COMMENT_CONTENT { get; set; }
         public System.DateTime COMMENT_TIME { get; set; }
         public int LIKES_NUMBER { get; set; }
+        public Nullable<int> PARENT_ID { get; set; }
     
         public virtual COMMENTTHUMBSUP COMMENTTHUMBSUP { get; set; }
     }

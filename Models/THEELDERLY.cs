@@ -30,6 +30,7 @@ namespace WebApplication1.Models
             this.CARE = new HashSet<CARE>();
             this.ORDERED = new HashSet<ORDERED>();
             this.SUPERVISOR = new HashSet<SUPERVISOR>();
+            this.DRUG_LOG = new HashSet<DRUG_LOG>();
         }
     
         public int ELDERLY_ID { get; set; }
@@ -70,5 +71,7 @@ namespace WebApplication1.Models
         public virtual ICollection<ORDERED> ORDERED { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SUPERVISOR> SUPERVISOR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DRUG_LOG> DRUG_LOG { get; set; }
     }
 }

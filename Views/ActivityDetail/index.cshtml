@@ -10,6 +10,17 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/bootstrap-icons.css" rel="stylesheet">
     <link href="~/Content/tooplate-mini-finance.css" rel="stylesheet">
+    <style>
+        .comment {
+            margin-bottom: 1em;
+        }
+
+        .replies {
+            margin-left: 2em;
+            border-left: 1px solid #ccc;
+            padding-left: 1em;
+        }
+    </style>
     <title>活动详细信息</title>
 </head>
 <body>
@@ -83,18 +94,24 @@
                     <!-- 评论区 -->
                     <div class="custom-block bg-white mt-4">
                         <h6 class="mb-3">评论区</h6>
-                        <div v-if="comments.length">
-                            <div v-for="comment in comments" class="mb-3">
-                                <p class="mb-1"><strong>评论用户:</strong> [[ (comment.USER_ID) ]]</p>
-                                <p class="mb-1"><strong>评论时间:</strong> [[ (comment.COMMENT_TIME) ]]</p>
-                                <p class="mb-1"><strong>评论内容:</strong> [[ comment.COMMENT_CONTENT ]]</p>
-                                <hr>
-                            </div>
-                        </div>
-                        <div v-else>
-                            <p>暂无评论。</p>
-                        </div>
+                        @*<div v-if="comments.length">
+            <div v-for="comment in comments" class="mb-3">
+                <p class="mb-1"><strong>评论用户:</strong> [[ (comment.USER_ID) ]]</p>
+                <p class="mb-1"><strong>评论时间:</strong> [[ (comment.COMMENT_TIME) ]]</p>
+                <p class="mb-1"><strong>评论内容:</strong> [[ comment.COMMENT_CONTENT ]]</p>
+                <hr>
+            </div>
+        </div>
+        <div v-else>
+            <p>暂无评论。</p>
+        </div>*@
 
+
+
+                        <!-- 显示评论 -->
+                        <div class="comments">
+                            <comment-item v-for="comment in comments" :key="comment.COMMENT_ID" :comment="comment" v-on:reply="handleReply"></comment-item>
+                        </div>
                         <!-- 添加评论表单 -->
                         <form v-on:submit.prevent="submitComment">
                             <div class="form-group">
@@ -108,7 +125,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="~/Scripts/activity-detail.js"></script>

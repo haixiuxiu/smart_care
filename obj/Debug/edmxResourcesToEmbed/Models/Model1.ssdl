@@ -155,6 +155,7 @@
     <Property Name="COMMENT_CONTENT" Type="varchar2" MaxLength="500" Nullable="false" />
     <Property Name="COMMENT_TIME" Type="timestamp" Precision="6" Nullable="false" />
     <Property Name="LIKES_NUMBER" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PARENT_ID" Type="number" Precision="10" Scale="0" />
   </EntityType>
   <EntityType Name="DRUG">
     <Key>
@@ -312,14 +313,6 @@
     <Property Name="PURCHASE_TYPE" Type="varchar2" MaxLength="20" Nullable="false" />
     <Property Name="PURCHASE_NUM" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="PURCHASE_PRICE" Type="number" Precision="38" Scale="0" Nullable="false" />
-  </EntityType>
-  <EntityType Name="REPLYCOMMENT">
-    <Key>
-      <PropertyRef Name="ACTIVITY_ID" />
-      <PropertyRef Name="COMMENT_ID" />
-    </Key>
-    <Property Name="ACTIVITY_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="COMMENT_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="SUPERVISOR">
     <Key>
@@ -623,11 +616,11 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="DRUG_LOG_FK1">
-    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="THEELDERLY" Type="Self.THEELDERLY" Multiplicity="1" />
     <End Role="DRUG_LOG" Type="Self.DRUG_LOG" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="APPUSER">
-        <PropertyRef Name="USER_ID" />
+      <Principal Role="THEELDERLY">
+        <PropertyRef Name="ELDERLY_ID" />
       </Principal>
       <Dependent Role="DRUG_LOG">
         <PropertyRef Name="ELDERLY_ID" />
@@ -647,11 +640,11 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="DRUG_LOG_FK3">
-    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="COMMUNITY_DOCTOR" Type="Self.COMMUNITY_DOCTOR" Multiplicity="1" />
     <End Role="DRUG_LOG" Type="Self.DRUG_LOG" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="APPUSER">
-        <PropertyRef Name="USER_ID" />
+      <Principal Role="COMMUNITY_DOCTOR">
+        <PropertyRef Name="COMMUNITY_DOCTOR_ID" />
       </Principal>
       <Dependent Role="DRUG_LOG">
         <PropertyRef Name="DOCTOR_ID" />
@@ -852,18 +845,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="REPLYCOMMENT_FK2">
-    <End Role="EVENT" Type="Self.EVENT" Multiplicity="1" />
-    <End Role="REPLYCOMMENT" Type="Self.REPLYCOMMENT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EVENT">
-        <PropertyRef Name="EVENT_ID" />
-      </Principal>
-      <Dependent Role="REPLYCOMMENT">
-        <PropertyRef Name="ACTIVITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="SUPERVISOR_ELDERLY_FK1">
     <End Role="SUPERVISOR" Type="Self.SUPERVISOR" Multiplicity="1" />
     <End Role="SUPERVISOR_ELDERLY" Type="Self.SUPERVISOR_ELDERLY" Multiplicity="*" />
@@ -959,7 +940,6 @@
     <EntitySet Name="ORDERED" EntityType="Self.ORDERED" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="PHARMACY_ADMIN" EntityType="Self.PHARMACY_ADMIN" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="PURCHASE" EntityType="Self.PURCHASE" Schema="C##TESTUSER" store:Type="Tables" />
-    <EntitySet Name="REPLYCOMMENT" EntityType="Self.REPLYCOMMENT" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="SUPERVISOR" EntityType="Self.SUPERVISOR" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="SUPERVISOR_ELDERLY" EntityType="Self.SUPERVISOR_ELDERLY" Schema="C##TESTUSER" store:Type="Tables" />
     <EntitySet Name="THEELDERLY" EntityType="Self.THEELDERLY" Schema="C##TESTUSER" store:Type="Tables" />
@@ -1066,7 +1046,7 @@ FROM "C##TESTUSER"."CHECK_RECORD" "CHECK_RECORD"</DefiningQuery>
       <End Role="COMMENTTHUMBSUP" EntitySet="COMMENTTHUMBSUP" />
     </AssociationSet>
     <AssociationSet Name="DRUG_LOG_FK1" Association="Self.DRUG_LOG_FK1">
-      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="THEELDERLY" EntitySet="THEELDERLY" />
       <End Role="DRUG_LOG" EntitySet="DRUG_LOG" />
     </AssociationSet>
     <AssociationSet Name="DRUG_LOG_FK2" Association="Self.DRUG_LOG_FK2">
@@ -1074,7 +1054,7 @@ FROM "C##TESTUSER"."CHECK_RECORD" "CHECK_RECORD"</DefiningQuery>
       <End Role="DRUG_LOG" EntitySet="DRUG_LOG" />
     </AssociationSet>
     <AssociationSet Name="DRUG_LOG_FK3" Association="Self.DRUG_LOG_FK3">
-      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="COMMUNITY_DOCTOR" EntitySet="COMMUNITY_DOCTOR" />
       <End Role="DRUG_LOG" EntitySet="DRUG_LOG" />
     </AssociationSet>
     <AssociationSet Name="DRUG_STORE_FK1" Association="Self.DRUG_STORE_FK1">
@@ -1140,10 +1120,6 @@ FROM "C##TESTUSER"."CHECK_RECORD" "CHECK_RECORD"</DefiningQuery>
     <AssociationSet Name="PURCHASE_FK3" Association="Self.PURCHASE_FK3">
       <End Role="DRUG_STORE" EntitySet="DRUG_STORE" />
       <End Role="PURCHASE" EntitySet="PURCHASE" />
-    </AssociationSet>
-    <AssociationSet Name="REPLYCOMMENT_FK2" Association="Self.REPLYCOMMENT_FK2">
-      <End Role="EVENT" EntitySet="EVENT" />
-      <End Role="REPLYCOMMENT" EntitySet="REPLYCOMMENT" />
     </AssociationSet>
     <AssociationSet Name="SUPERVISOR_ELDERLY_FK1" Association="Self.SUPERVISOR_ELDERLY_FK1">
       <End Role="SUPERVISOR" EntitySet="SUPERVISOR" />

@@ -20,7 +20,7 @@ namespace WebApplication1.Models
     
         public virtual CARETAKER CARETAKER { get; set; }
         public virtual COMMUNITY_DOCTOR COMMUNITY_DOCTOR { get; set; }
-        public virtual EVENT EVENT { get; set; }
         public virtual THEELDERLY THEELDERLY { get; set; }
+        public virtual EVENT EVENT { get; set; }
     }
 }

@@ -26,5 +26,7 @@ namespace WebApplication1.Models
         public virtual APPUSER APPUSER { get; set; }
         public virtual APPUSER APPUSER1 { get; set; }
         public virtual DRUG DRUG { get; set; }
+        public virtual COMMUNITY_DOCTOR COMMUNITY_DOCTOR { get; set; }
+        public virtual THEELDERLY THEELDERLY { get; set; }
     }
 }
